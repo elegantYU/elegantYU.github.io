@@ -33,7 +33,8 @@ body a:hover {
     width: 100%;
     height: 160px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center center;
 }
 
 .post-content {

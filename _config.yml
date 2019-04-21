@@ -40,9 +40,9 @@ relative_link: false
 future: true
 highlight:
   enable: false
-  line_number: false
+  line_number: true
   auto_detect: false
-  tab_replace:
+  tab_replace: false
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -87,6 +87,5 @@ theme: Material-T
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  # 下方的gh_token 会被travis.yml中的sed命令替代
   repo: https://github.com/elegantYU/elegantYU.github.io.git
   branch: master
