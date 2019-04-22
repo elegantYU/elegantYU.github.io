@@ -1,13 +1,13 @@
 <div id="gitment" style="width:100%;"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
 <script>
   let gitment = new Gitment({
-    owner: 'elegantYU',
-    repo: 'myGitment',
+    owner: '<%= gitment.github_user %>',
+    repo: '<%= gitment.github_repo %>',
     oauth: {
-      client_id: 'cfc48d7af968e63949be',
-      client_secret: '1bc7c58b929910fca29f2ff83d69afb8774d76a7',
+      client_id: '<%= gitment.client_id %>',
+      client_secret: '<%= gitment.client_secret %>',
     },
   })
   gitment.render('gitment')
