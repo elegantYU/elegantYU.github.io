@@ -56,8 +56,23 @@ post:
     enable: true
     content: 本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC">CC BY-SA 3.0协议</a> 。转载请注明出处！
   comments: 
-    enable: false
-    type: disqus  # available: disqus | valine
+    enable: true
+    type: gitment  # available: disqus | valine
+
+# Gitment
+gitment:
+  enable: true
+  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+  count: true # Show comments count in post meta area
+  lazy: false # Comments lazy loading with a button
+  cleanly: false # Hide 'Powered by ...' on footer, and more
+  language: # Force language, or auto switch by theme
+  github_user: elegantYU
+  github_repo: myGitment
+  client_id: cfc48d7af968e63949be
+  client_secret: 1bc7c58b929910fca29f2ff83d69afb8774d76a7
+  proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
+  redirect_protocol: # Protocol of redirect_uri with force_redirect_pro
 
 # Disqus
 disqus:
