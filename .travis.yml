@@ -7,6 +7,13 @@ branches:
   only:
     - dev
 
+before_install:
+  - npm install -g hexo-cli
+
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
+
 before_script:
   - git config user.name "elegantYU"
   - git config user.email "845384559@qq.com"

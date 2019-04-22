@@ -9,6 +9,9 @@ index_img: http://www.freehao123.com/wp-content/uploads/2016/08/Hexo-blog-jianzh
 > 从头至尾皆是本人的亲生体会，希望对大家有所借鉴和帮助
 
 <!-- more -->
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE) [![HitCount](http://hits.dwyl.io/elegantYU/elegantYUgithubio.svg)](http://hits.dwyl.io/elegantYU/elegantYUgithubio)
+
+
 ## 博客环境
 
 1. <u>[Node.js](https://nodejs.org/zh-cn/)</u>你要有吧，版本当然是越新越好，越稳定越好;
