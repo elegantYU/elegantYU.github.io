@@ -3,12 +3,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
 <script>
   let gitment = new Gitment({
-    // id: 'test',
-    owner: '<%= gitment.github_user %>',
-    repo: '<%= gitment.github_repo %>',
+    id: '<%= page.subtitle %>',
+    owner: '<%= theme.gitment.github_user %>',
+    repo: '<%= theme.gitment.github_repo %>',
     oauth: {
-      client_id: '<%= gitment.client_id %>',
-      client_secret: '<%= gitment.client_secret %>',
+      client_id: '<%= theme.gitment.client_id %>',
+      client_secret: '<%= theme.gitment.client_secret %>',
     },
   })
   gitment.render('gitment')
