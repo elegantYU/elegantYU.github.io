@@ -17,7 +17,7 @@ apple_touch_icon: /apple-touch-icon.png
 # Index Page
 #---------------------------
 index: 
-  banner_img: /img/1554818513390.jpg
+  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-103592.jpg
   banner_img_height: 100  # available: 0 - 100
   subtitle:
     enable: true
@@ -45,7 +45,7 @@ navbar:
 # Post Page
 #---------------------------
 post: 
-  banner_img: /img/1554818516641.jpg
+  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-592153.jpg
   banner_img_height: 70  # available: 0 - 100
   toc: 
     enable: true
@@ -98,7 +98,7 @@ valine:
 # Archive Page
 #---------------------------
 archive: 
-  banner_img: /img/1554818474783.jpg
+  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-614889.png
   banner_img_height: 80  # available: 0 - 100
 
 #---------------------------
@@ -106,7 +106,7 @@ archive:
 # About Page
 #---------------------------
 about:
-  banner_img: /img/1554818519647.jpg
+  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95725.jpg
   banner_img_height: 100  # available: 0 - 100
   avatar: /img/keepsmile.jpg
   name: 胡不语
