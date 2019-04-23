@@ -44,7 +44,7 @@ index_img: http://www.freehao123.com/wp-content/uploads/2016/08/Hexo-blog-jianzh
 
 1. 在github上创建名为 `<你的Github帐号>.github.io` 的仓库
 
-2. 使用命令，将本地hexo博客的仓库推送到github仓库
+2. 使用命令，将本地hexo博客的仓库推送到github仓库(加入的命令越多，构建越慢)
 
     - 安装 `hexo-deployer-git` 插件
     ```bash
