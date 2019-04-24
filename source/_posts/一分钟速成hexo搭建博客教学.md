@@ -1,6 +1,6 @@
 ---
 title: 一分钟速成hexo搭建博客教学
-subtitle: learn hexo
+subtitle: learn_hexo
 date: 2019-04-18 22:12:46
 tags: 教程
 index_img: http://www.freehao123.com/wp-content/uploads/2016/08/Hexo-blog-jianzhan_1.jpg
