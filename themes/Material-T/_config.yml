@@ -69,8 +69,8 @@ gitment:
   language: # Force language, or auto switch by theme
   github_user: elegantYU
   github_repo: myGitment
-  client_id: cfc48d7af968e63949be
-  client_secret: 1bc7c58b929910fca29f2ff83d69afb8774d76a7
+  client_id: 375e98e107a8c51ec860
+  client_secret: 9f2ed9a54d7834fe3d3d8802074d968b89ddf28d
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_pro
 
