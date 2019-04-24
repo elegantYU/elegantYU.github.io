@@ -218,4 +218,98 @@ $ git push
 
 ## hexo扩展插件
 
-none
+#### 留言系统(gitment)
+
+    留言系统基本有Valine,Livere,Gitment,Disqus几种，这里选择的是Gitment(大家都是有gitment帐号的人了)，所有的评论会已提交issue的形式保存在配置的仓库中。
+    下面，开始干货输出。
+
+    - 注册gitment,在<u>[New OAuth App](https://github.com/settings/applications/new)</u>为博客创建一个密钥
+
+        ![get info](http://ww1.sinaimg.cn/large/006665PZgy1g2e2uilm1cj30m00fr74y.jpg '生成密钥')
+
+        ```yml
+        Application name: '给你放置评论的仓库起名'
+        Homepage URL: '可以直接填你的博客链接'
+        Application deccription: '描述...'
+        Authorization callback URL: '这个必须填博客地址'
+        ```
+
+    - 在你博客主题里找到或添加
+
+        ```yml
+        gitment:
+        enable: true
+        mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+        count: true # Show comments count in post meta area
+        lazy: false # Comments lazy loading with a button
+        cleanly: false # Hide 'Powered by ...' on footer, and more
+        language: # Force language, or auto switch by theme
+        github_user: 你的github ID
+        github_repo: 刚才填的仓库名(注意，只要名字，不要链接)
+        client_id: 刚才申请的ClientID
+        client_secret: 刚才申请的Client Secret
+        proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
+        redirect_protocol: # Protocol of redirect_uri with force_redirect_pro
+        ```
+
+    - 添加gitment.ejs
+
+        有的主题有，我的是自行创建的。
+        ```html
+        <!-- 放gitment的div -->
+        <div id="gitment"></div>
+        <!-- 下面两个链接时助你越过一个大坑 -->
+        <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
+        <!-- 初始化gitment实例 -->
+        <script>
+            let gitment = new Gitment({
+                // 关于id这一点要重点说下，这里又是一个大坑，在下面细说
+                id: '<%= page.subtitle %>',
+                // 这里要注意映入yml里面的配置 要加上theme,不然默认引入最外层的config.yml
+                owner: '<%= theme.gitment.github_user %>',
+                repo: '<%= theme.gitment.github_repo %>',
+                oauth: {
+                client_id: '<%= theme.gitment.client_id %>',
+                client_secret: '<%= theme.gitment.client_secret %>',
+                },
+            })
+            gitment.render('gitment')
+        </script>
+        ```
+
+    - 初始化gitment
+
+        啥都整差不多了，只需`add commit push`三步走。部署完成后，在文章页面找到你的留言区域，使用你的Git帐号登录授权，然后点击出现的蓝色按钮，初始化！
+
+        初始化完成后还不留言测试下？
+
+        'comment'！这时候可以去你的博客留言仓库看下，会发现`issue`板块多了你的文章标题，并且其中还有你的测试信息。那么恭喜你，gitment搭建完毕，剩下的就是根据你的喜好改变样式了。
+    
+    - gitment的坑
+
+        - gitment原始的js、css外链因为作者已经不维护，其内部有个请求的url已不存在，会导致gitment的主人初始化一直转圈圈。就用我这个吧，这是被大佬们down下来加了cdn的，稳。
+
+        - 初始化实例的id。此id默认是获取文章的title作为id，这就意味着你的文章标题不能够恣意洒脱的长短由心。吾辈中人岂能受这气？尤其是像我这样标题喜欢浪的。苦苦寻觅之下，终得一良方，便是在文章的Front Matter(md文章最上边的变量区域)里加入一个变量`subtitle`，并将其赋值给id。
+
+            ```markdown
+            ---
+            title: 一分钟速成hexo搭建博客教学
+            subtitle: learn hexo
+            date: 2019-04-18 22:12:46
+            tags: 教程
+            ---
+            ```
+
+            如此这般，即可解决此大坑。
+
+            另外，为了方便以后的使用，可以在`/scaffolds/post.md`中，加入此变量。
+
+            ```md
+            ---
+            title: {{ title }}
+            subtitle:
+            date: {{ date }}
+            tags:
+            ---
+            ```
