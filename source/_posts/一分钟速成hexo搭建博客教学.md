@@ -13,6 +13,8 @@ index_img: http://www.freehao123.com/wp-content/uploads/2016/08/Hexo-blog-jianzh
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE) [![HitCount](http://hits.dwyl.io/elegantYU/elegantYUgithubio.svg)](http://hits.dwyl.io/elegantYU/elegantYUgithubio)
 
 
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=520 height=52 src="//music.163.com/outchain/player?type=2&id=475073576&auto=1&height=32"></iframe>
+
 ## 博客环境
 
 1. <u>[Node.js](https://nodejs.org/zh-cn/)</u>你要有吧，版本当然是越新越好，越稳定越好;
@@ -232,6 +234,8 @@ $ git push
     Homepage URL: '可以直接填你的博客链接'
     Application deccription: '描述...'
     Authorization callback URL: '这个必须填博客地址'
+    # 注意 Homepage 和 callback 的url后都要加 / (这里也是一个坑)
+    # 例 https://elegantyu.github.io/
     ```
 
 - 在你博客主题里找到或添加
@@ -313,3 +317,9 @@ $ git push
         tags:
         ---
         ```
+
+#### 网易云音乐
+
+- 进入<u>[网易云音乐](https://music.163.com/)</u>，选择你喜欢的歌，点击`生成外链播放器`，就可得到一个html的iframe标签
+
+- 插进去
