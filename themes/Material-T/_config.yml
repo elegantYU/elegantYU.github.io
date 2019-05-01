@@ -45,7 +45,7 @@ navbar:
 # Post Page
 #---------------------------
 post: 
-  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-592153.jpg
+  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-34597.jpg
   banner_img_height: 70  # available: 0 - 100
   toc: 
     enable: true
@@ -98,7 +98,7 @@ valine:
 # Archive Page
 #---------------------------
 archive: 
-  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-614889.png
+  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-439199.jpg
   banner_img_height: 80  # available: 0 - 100
 
 #---------------------------
@@ -106,9 +106,9 @@ archive:
 # About Page
 #---------------------------
 about:
-  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95725.jpg
+  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-558971.jpg
   banner_img_height: 100  # available: 0 - 100
-  avatar: http://ww1.sinaimg.cn/large/006665PZgy1g2cyuzkfc9j3163162n3b.jpg
+  avatar: https://i.loli.net/2019/05/01/5cc9031519cfb.jpg
   name: 胡不语
   introduce: 要想求仙术，哪能怕吃苦啊
   icons: 

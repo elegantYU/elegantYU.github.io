@@ -323,3 +323,110 @@ $ git push
 - 进入<u>[网易云音乐](https://music.163.com/)</u>，选择你喜欢的歌，点击`生成外链播放器`，就可得到一个html的iframe标签
 
 - 插进去
+
+#### 代码高亮的mac panel样式
+
+  > 这里不得不说下写博客的其中一条初衷，那就是让更多人从`百度`这种**搜索引擎的重复答案中，能找到几篇文章是不浑水摸鱼、CV大师的。
+
+  - 在搜寻更好看，简约的高亮主题中，我被这款迷住了双眼。果然，设计领域中只有mac设计和仿mac设计。话不多说，下面是这种风格效果的实现
+
+  - 首先，我们要知道 `mac panel` 这种效果并不是一种代码高亮的主题，其只是在代码区域外层做的一个样式包裹。所以，我们的主要问题和解决途径就是如何修改代码的外围区域
+
+  - 我们在博客的根目录下创建一个`scripts`文件夹，其中放置一些我们需要的全局脚本文件
+
+  - 新建`codeblock.js`文件，在其中我们使用hexo的api`after_post_render`，用于在文章页渲染时做代码区域的处理
+
+  - 主要代码构成如下（这里无需引入什么模块，hexo执行相关命令的时候会自动访问）
+
+	```javascript
+	const attributes = [    // 用于panel外层div的属性
+		'autocomplete="off"',
+		'autocorrect="off"',
+		'autocapitalize="off"',
+		'spellcheck="false"',
+		'contenteditable="true"'
+	]
+
+	const attributesStr = attributes.join(' ')
+
+	// 此方法可以获取所有文章的全部内容，具体可以打印 data
+	hexo.extend.filter.register('after_post_render', data => {
+		// 这里是使用while持续获取匹配到的代码区域的dom标签
+		// 这里可能就有人问'为什么别人的文章都是/<figure ***>/你的是/<pre>***/'
+		// 你说为啥不一样，我们用的不是一个主题呗，这里的正则是根据你当前主题内文章渲染后代码区域的dom标签来定
+		// 查看dom都会吧
+		while (/<pre>(([\s\S])*?)<\/pre>/.test(data.content)) {
+			// 之后的操作就是将匹配到的标签，在其外层拼接一个div，然后返回所有文章
+			data.content = data.content.replace(/<pre>(([\s\S])*?)<\/pre>/, () => {
+				let lastMatch = RegExp.lastMatch
+				let language = RegExp.$1.match(/(?<= )class=".*?"/)[0].split('=')[1] || 'plain'
+				lastMatch = lastMatch.replace(/<pre>/, '<pre class="iseeu">')
+				return `<div class="highlight-wrap"${attributesStr} data-rel=${language.toUpperCase()}>${lastMatch}</div>`
+			})
+		}
+		return data
+	})
+	```
+
+- `highlight-wrap`的css样式，写在你的主题目录下的全局css/less/scss/...文件中
+	
+	```css
+	/* mac panel */
+	.highlight-wrap[data-rel] {
+		position: relative;
+		overflow: hidden;
+		border-radius: 5px;
+		box-shadow: 0 10px 30px 0px rgba(0,0,0,0.4);
+		margin: 35px 0;
+	}
+	.highlight-wrap[data-rel] ::-webkit-scrollbar {
+		height: 10px;
+	}
+	.highlight-wrap[data-rel] ::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+		border-radius: 10px;
+	}
+	.highlight-wrap[data-rel] ::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	}
+	.highlight-wrap[data-rel] ::before {
+		color: white;
+		content: attr(data-rel);
+		height: 38px;
+		line-height: 38px;
+		background: #21252b;
+		color: #fff;
+		font-size: 16px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: bold;
+		padding: 0px 80px;
+		text-indent: 15px;
+		float: left;
+	}
+	.highlight-wrap[data-rel] ::after {
+		content: " ";
+		position: absolute;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		background: #fc625d;
+		width: 12px;
+		height: 12px;
+		top: 0;
+		left: 20px;
+		margin-top: 13px;
+		-webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
+		box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
+		z-index: 3;
+	}
+	.highlight-wrap[data-rel] pre {
+		margin: 0;
+		padding: 40px 0 10px;
+	}
+	```
+
+- 全部配置完毕，运行`hexo s`，查看运行效果，基本上就已经完成了(css细节自行调节)

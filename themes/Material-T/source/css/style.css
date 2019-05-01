@@ -17,7 +17,7 @@ body a {
 }
 
 body a:hover {
-    color: #89229b;
+    color: #409EFF;
 }
 
 .main {
@@ -79,9 +79,19 @@ body a:hover {
 .about-avatar {
     position: relative;
     margin: -8rem auto 1rem;
-    max-width: 10rem;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
     z-index: 3;
 }
+.about-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 
 /*
 * toc 
@@ -107,7 +117,7 @@ body a:hover {
 
 .tocbot-active-link {
     font-weight: 600;
-    color: #89229b;
+    color: #409EFF;
 }
 
 .tocbot-is-collapsible {
@@ -255,4 +265,61 @@ top: 11px;
 -moz-transform: rotate(-135deg);
 -o-transform: rotate(-135deg);
 transform: rotate(-135deg);
+}
+
+/* mac panel */
+.highlight-wrap[data-rel] {
+position: relative;
+overflow: hidden;
+border-radius: 5px;
+box-shadow: 0 10px 30px 0px rgba(0,0,0,0.4);
+margin: 35px 0;
+}
+.highlight-wrap[data-rel] ::-webkit-scrollbar {
+height: 10px;
+}
+.highlight-wrap[data-rel] ::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+border-radius: 10px;
+}
+.highlight-wrap[data-rel] ::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.highlight-wrap[data-rel] ::before {
+color: white;
+content: attr(data-rel);
+height: 38px;
+line-height: 38px;
+background: #21252b;
+color: #fff;
+font-size: 16px;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+font-family: 'Source Sans Pro', sans-serif;
+font-weight: bold;
+padding: 0px 80px;
+text-indent: 15px;
+float: left;
+}
+.highlight-wrap[data-rel] ::after {
+content: " ";
+position: absolute;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+background: #fc625d;
+width: 12px;
+height: 12px;
+top: 0;
+left: 20px;
+margin-top: 13px;
+-webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
+box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
+z-index: 3;
+}
+.highlight-wrap[data-rel] pre {
+    margin: 0;
+    padding: 40px 0 10px;
 }
