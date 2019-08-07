@@ -17,7 +17,7 @@ apple_touch_icon: /apple-touch-icon.png
 # Index Page
 #---------------------------
 index: 
-  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-103592.jpg
+  banner_img: https://w.wallhaven.cc/full/g8/wallhaven-g82m1d.png
   banner_img_height: 100  # available: 0 - 100
   subtitle:
     enable: true
@@ -45,7 +45,7 @@ navbar:
 # Post Page
 #---------------------------
 post: 
-  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-592153.jpg
+  banner_img: https://w.wallhaven.cc/full/6k/wallhaven-6kwrdx.png
   banner_img_height: 70  # available: 0 - 100
   toc: 
     enable: true
@@ -98,7 +98,7 @@ valine:
 # Archive Page
 #---------------------------
 archive: 
-  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-614889.png
+  banner_img: https://w.wallhaven.cc/full/43/wallhaven-43qrld.jpg
   banner_img_height: 80  # available: 0 - 100
 
 #---------------------------
@@ -106,9 +106,9 @@ archive:
 # About Page
 #---------------------------
 about:
-  banner_img: https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95725.jpg
+  banner_img: https://w.wallhaven.cc/full/nz/wallhaven-nzymgv.jpg
   banner_img_height: 100  # available: 0 - 100
-  avatar: http://ww1.sinaimg.cn/large/006665PZgy1g2cyuzkfc9j3163162n3b.jpg
+  avatar: https://w.wallhaven.cc/full/d5/wallhaven-d5dpw3.png
   name: 胡不语
   introduce: 要想求仙术，哪能怕吃苦啊
   icons: 

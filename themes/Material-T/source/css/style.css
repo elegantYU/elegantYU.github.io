@@ -17,7 +17,7 @@ body a {
 }
 
 body a:hover {
-    color: #89229b;
+    color: #1b93fb;
 }
 
 .main {
@@ -82,6 +82,19 @@ body a:hover {
     max-width: 10rem;
     z-index: 3;
 }
+.about-avatar .avatar{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar img {
+    max-height: 100%;
+}
 
 /*
 * toc 
@@ -107,7 +120,7 @@ body a:hover {
 
 .tocbot-active-link {
     font-weight: 600;
-    color: #89229b;
+    color: #1b93fb;
 }
 
 .tocbot-is-collapsible {

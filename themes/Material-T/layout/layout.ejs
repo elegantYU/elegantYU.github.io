@@ -50,7 +50,9 @@
     <div class="py-5 z-depth-3 main">
       <% if(page.type == 'about') { %>
         <div class="about-avatar">
-          <img src="<%- url_for(theme.about.avatar) %>" class="img-fluid z-depth-1 rounded-circle" alt="avatar">
+          <div class="avatar rounded-circle">
+            <img src="<%- url_for(theme.about.avatar) %>" class="z-depth-1" alt="avatar">
+          </div>
         </div>
       <% } %>
       <div class="container">

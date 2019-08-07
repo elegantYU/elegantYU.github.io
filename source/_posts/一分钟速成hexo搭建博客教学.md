@@ -3,15 +3,14 @@ title: 一分钟速成hexo搭建博客教学
 subtitle: learn_hexo
 date: 2019-04-18 22:12:46
 tags: 教程
-index_img: http://www.freehao123.com/wp-content/uploads/2016/08/Hexo-blog-jianzhan_1.jpg
+index_img: https://w.wallhaven.cc/full/nm/wallhaven-nm77x9.jpg
 ---
 
 > 此篇博客乃在下历时月许，拖沓至今才准备出的hexo+github搭建博客教学。
 > 从头至尾皆是本人的亲生体会，希望对大家有所借鉴和帮助
 
 <!-- more -->
-[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE) [![HitCount](http://hits.dwyl.io/elegantYU/elegantYUgithubio.svg)](http://hits.dwyl.io/elegantYU/elegantYUgithubio)
-
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=520 height=52 src="//music.163.com/outchain/player?type=2&id=475073576&auto=1&height=32"></iframe>
 
