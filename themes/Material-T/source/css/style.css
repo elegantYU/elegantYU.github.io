@@ -269,3 +269,19 @@ top: 11px;
 -o-transform: rotate(-135deg);
 transform: rotate(-135deg);
 }
+
+/* 
+滚动条样式
+*/
+::-webkit-scrollbar{
+    width:4px;
+    height:4px;
+    background: transparent;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #5bb2ff;
+}
