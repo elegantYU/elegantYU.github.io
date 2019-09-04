@@ -89,3 +89,9 @@ deploy:
   type: git
   repo: https://github.com/elegantYU/elegantYU.github.io.git
   branch: master
+
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true

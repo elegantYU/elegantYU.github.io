@@ -1,23 +1,24 @@
 <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-<div class="container">
-    <a class="navbar-brand" href="<%- url_for() %>"><strong><%= config.title %></strong></a>
+    <div class="container">
+        <a class="navbar-brand" href="<%- url_for() %>"><strong><%= config.title %></strong></a>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
+        <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon"><span></span><span></span><span></span></div>
+        </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto text-center">
-            <% for(var i in theme.navbar.menu) { %>
-            <li class="nav-item">
-                <a class="nav-link" href="<%- url_for(theme.navbar.menu[i]) %>"><%= i %></a>
-            </li>
-            <% } %>
-        </ul>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-center">
+                <% for(var i in theme.navbar.menu) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%- url_for(theme.navbar.menu[i]) %>"><%= i %></a>
+                </li>
+                <% } %>
+                <li class="nav-item searchIcon">
+                    <svg t="1567566589855" class="icon" viewBox="0 0 1057 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1195" width="200" height="200"><path d="M718.205664 663.873402l2.115782 1.945155 295.595242 301.737835c8.360752 8.258375 11.705053 20.475311 8.770259 31.941486a32.487494 32.487494 0 0 1-22.966474 23.444231 31.736732 31.736732 0 0 1-31.258975-8.975011l-295.595242-301.70371a32.794623 32.794623 0 0 1-0.273005-0.204753 396.197271 396.197271 0 0 1-564.3337-19.212667c-151.312549-162.8811-146.261973-419.675628 11.261421-576.277633a396.163145 396.163145 0 0 1 564.674956 3.822058 33.306506 33.306506 0 0 1-0.409506 46.035325 31.702607 31.702607 0 0 1-45.045685 0.409506C520.107029 43.880981 328.66287 31.937049 194.344828 138.954675 59.958536 246.006427 24.809252 438.474352 112.375333 587.705245c87.531955 149.265018 270.342358 208.541044 426.227727 138.20835 155.851243-70.332694 235.943836-248.229022 186.700712-414.795678a33.306506 33.306506 0 0 1 7.405238-31.941486 31.736732 31.736732 0 0 1 30.815343-9.418643 32.419243 32.419243 0 0 1 23.410106 22.522842c12.660567 43.134655 18.325403 88.18034 16.721504 133.26015a413.94254 413.94254 0 0 1-85.484424 238.332622z" p-id="1196" fill="#ffffff"></path></svg>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-
-
 </nav>
