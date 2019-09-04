@@ -308,7 +308,7 @@ footer{
     display: flex;
     justify-content: center;
 }
-#busuanzi_container_site_uv{
+.webViewData{
     font-size: 10px;
 }
 
