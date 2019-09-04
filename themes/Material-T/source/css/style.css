@@ -12,6 +12,11 @@ body {
     color: #3c4858;
 }
 
+body ::selection {
+    background-color: #666;
+    color: #eee;
+}
+
 body a {
     color: #3c4858;
 }
@@ -345,4 +350,21 @@ macpanel
     box-sizing: border-box;
     padding: 45px 0 10px;
     margin-bottom: -0.01rem;
+}
+
+/* 
+    没有感情的打字机器_光标
+*/
+.lineSymbol{
+    font-size: 2em;
+    animation: flash 0.5s alternate infinite;
+}
+
+@keyframes flash {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
