@@ -301,6 +301,17 @@ footer a {
     border-radius: 4px;
     background: #5bb2ff;
 }
+/* 
+    卜算子
+*/
+footer{
+    display: flex;
+    justify-content: center;
+}
+#busuanzi_container_site_uv{
+    font-size: 10px;
+}
+
 
 /* 
 macpanel
