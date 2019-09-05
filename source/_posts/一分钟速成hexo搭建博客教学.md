@@ -326,10 +326,15 @@ $ git push
 #### 代码高亮的mac panel样式
   > 这里不得不说下写博客的其中一条初衷，那就是让更多人从`百度`这种**搜索引擎的重复答案中，能找到几篇文章是不浑水摸鱼、CV大师的。
   - 在搜寻更好看，简约的高亮主题中，我被这款迷住了双眼。果然，设计领域中只有mac设计和仿mac设计。话不多说，下面是这种风格效果的实现
+
   - 首先，我们要知道 `mac panel` 这种效果并不是一种代码高亮的主题，其只是在代码区域外层做的一个样式包裹。所以，我们的主要问题和解决途径就是如何修改代码的外围区域
+
   - 我们在博客的根目录下创建一个`scripts`文件夹，其中放置一些我们需要的全局脚本文件
+
   - 新建`codeblock.js`文件，在其中我们使用hexo的api`after_post_render`，用于在文章页渲染时做代码区域的处理
+
   - 主要代码构成如下（这里无需引入什么模块，hexo执行相关命令的时候会自动访问）
+
 	```javascript
 	const attributes = [    // 用于panel外层div的属性
 		'autocomplete="off"',
@@ -359,7 +364,7 @@ $ git push
 	```
 - `highlight-wrap`的css样式，写在你的主题目录下的全局css/less/scss/...文件中
 	
-	```css
+	```scss
 	/* mac panel */
 	.highlight-wrap[data-rel] {
 		position: relative;
@@ -417,4 +422,5 @@ $ git push
 		padding: 40px 0 10px;
 	}
 	```
+    
 - 全部配置完毕，运行`hexo s`，查看运行效果，基本上就已经完成了(css细节自行调节)

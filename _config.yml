@@ -115,3 +115,13 @@ live2d:
     show: true
   react:
     opacity: 1
+
+# rss
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
