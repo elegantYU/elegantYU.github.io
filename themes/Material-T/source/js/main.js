@@ -33,6 +33,7 @@ $(document).ready(function () {
       }
     })
   }
+  // 搜索方法
   const searchFunc = (path, search_id, content_id) => {
     $.ajax({
       url: path,

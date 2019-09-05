@@ -2,7 +2,7 @@
 title: 一分钟速成hexo搭建博客教学
 subtitle: learn_hexo
 date: 2019-04-18 22:12:46
-tags: 教程
+tags: [教程, 一分钟系列]
 index_img: https://w.wallhaven.cc/full/nm/wallhaven-nm77x9.jpg
 ---
 
