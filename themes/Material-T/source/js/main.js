@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  let deviceType = false
+  const judgeDevice = () => {
+    const userAgentInfo = navigator.userAgent;
+    const Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"]
+    deviceType = Agents.some(v => userAgentInfo.includes(v))
+  }
+
   const navbarIcon = () => {
     $('#navbar-toggler-btn').on('click', function () {
       $('.animated-icon').toggleClass('open');
@@ -22,6 +29,9 @@ $(document).ready(function () {
     const $input = $('#searchLocalInput')
     $(".searchIcon").click(() => {
       $input.val('')
+      if (deviceType) {
+        $('#navbar-toggler-btn').click()
+      }
       $('#searchBox').fadeToggle()
       searchFunc(searchPath, 'searchLocalInput', 'searchContent')
     })
@@ -113,9 +123,11 @@ $(document).ready(function () {
   }
 
   const init = () => {
+    judgeDevice()
     navbarIcon()
     typeMachine()
     searchToggle()
+    console.log(deviceType)
   }
 
   init()

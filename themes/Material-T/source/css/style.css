@@ -43,7 +43,7 @@ body a:hover {
 }
 
 .post-content {
-    padding: 0 4rem;
+    padding: 0 6rem;
     box-shadow: 0 3px 15px 0 rgba(0,0,0,.2);
 }
 
@@ -184,6 +184,7 @@ footer a {
 .searchIcon{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding:  0 0.5rem;
 }
 
@@ -199,20 +200,6 @@ footer a {
 
 .navbar-col-show {
     background-color: #282a2b;
-}
-
-@media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: transparent;
-    }
-
-    .top-nav-collapse {
-        background-color: #282a2b;
-    }
-
-    .navbar-col-show {
-        background-color: #282a2b;
-    }
 }
 
 .animated-icon {
@@ -349,7 +336,7 @@ macpanel
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
-    padding: 0px 80px;
+    padding-left: 80px;
     text-indent: 15px;
     float: left;
 }
@@ -443,7 +430,7 @@ macpanel
     margin-bottom: 0;
     padding: 0.1rem 0;
     position: relative;
-    transition: all 0.5 linear;
+    transition: all 0.5s linear;
 }
 #searchContent::before{
     position: absolute;
@@ -474,6 +461,9 @@ macpanel
     font-weight: bold;
     margin-bottom: 4px;
     position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .search_result_title::before{
     position: absolute;
@@ -500,4 +490,31 @@ macpanel
     -webkit-line-clamp: 2;
     /*! autoprefixer: off */
     -webkit-box-orient: vertical;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: transparent;
+    }
+
+    .nav-item {
+        padding: 1rem 0;
+    }
+
+    .top-nav-collapse {
+        background-color: #282a2b;
+    }
+
+    .navbar-col-show {
+        background-color: #282a2b;
+    }
+
+    #searchBox {
+        top: 30%;
+        width: 22rem;
+    }
+
+    #searchContent{
+        padding: 0.5rem 0;
+    }
 }
