@@ -293,16 +293,23 @@ footer a {
     background: #5bb2ff;
 }
 /* 
-    卜算子
+    不蒜子
 */
 footer{
     display: flex;
     justify-content: center;
 }
 .webViewData{
+    display: flex;
+    align-items: center;
+    width: 8rem;
+    overflow: hidden;
     font-size: 10px;
 }
-
+.webViewData > span{
+    width: 8rem;
+    text-align: center;
+}
 
 /* 
 macpanel
