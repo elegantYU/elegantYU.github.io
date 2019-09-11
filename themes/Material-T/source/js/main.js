@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  let deviceType = false
+  let deviceType = false  //  设备终端
+
   const judgeDevice = () => {
     const userAgentInfo = navigator.userAgent;
     const Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"]
@@ -127,7 +128,6 @@ $(document).ready(function () {
     navbarIcon()
     typeMachine()
     searchToggle()
-    console.log(deviceType)
   }
 
   init()
