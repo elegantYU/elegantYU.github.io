@@ -12,7 +12,7 @@ index_img: https://w.wallhaven.cc/full/nm/wallhaven-nm77x9.jpg
 <!-- more -->
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=520 height=52 src="//music.163.com/outchain/player?type=2&id=475073576&auto=1&height=32"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=475073576&auto=1&height=66"></iframe>
 
 ## 博客环境
 
