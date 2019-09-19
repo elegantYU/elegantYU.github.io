@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let deviceType = false  //  设备终端
+  const title = document.title  //  当前页面标题
 
   const judgeDevice = () => {
     const userAgentInfo = navigator.userAgent;
@@ -122,6 +123,12 @@ $(document).ready(function () {
       }
     })
   }
+
+  // 页面可见性事件
+  $(document).on('visibilitychange', () => {
+    const state = document.visibilityState
+    document.title = state === 'visible' ? title : '糟了!'
+  })
 
   const init = () => {
     judgeDevice()

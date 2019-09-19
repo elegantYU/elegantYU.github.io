@@ -424,3 +424,36 @@ $ git push
 	```
     
 - 全部配置完毕，运行`hexo s`，查看运行效果，基本上就已经完成了(css细节自行调节)
+
+#### live2d动画
+
+加入右下角可爱的动画人物
+
+- 安装步骤 [看这里](https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md)
+
+- 各种[看板娘演示demo](https://huaji8.top/post/live2d-plugin-2.0/)
+
+#### 不蒜子统计
+
+使用不蒜子统计博客的uv,pv.
+
+- 在主题下`/layout/_partial/footer.js`中引入不蒜子脚本
+	```js
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	```
+- pv && uv的显示
+
+	```html
+	<!-- 站点总访问量(总pv) -->
+	<span id="busuanzi_container_site_pv">
+		总访问量<span id="busuanzi_value_site_pv"></span>
+	</span>
+	<!-- 当前页面访问量(单页pv) -->
+	<span id="busuanzi_container_page_pv">
+  	当前页面访问量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	<!-- 站点所有进入用户数(总uv) -->
+	<span id="busuanzi_container_site_uv">
+  	本站访客数<span id="busuanzi_value_site_uv"></span>
+	</span>
+	```
