@@ -7,8 +7,6 @@ $(document).ready(function () {
 	let tocLimMin = main.offset().top - navHeight;
 	let tocLimMax = $("#comments").offset().top - navHeight;
 
-	const STARRY_SKY = new Date().getFullYear() - 2017
-	let mouseClick = 0  //  点击计数
 
 	$(window).scroll(() => {
 		const scroH = document.body.scrollTop + document.documentElement.scrollTop;
@@ -243,18 +241,23 @@ $(document).ready(function () {
 		}
 	}
 
-	$('body').on({
-		'click': () => {
-			mouseClick++
-			if (mouseClick === STARRY_SKY) {
-				// 启动星空背景
-				console.log('Welcome to my universe...')
-				const canvas = `<canvas id="starrySky"></canvas>`
-				main.addClass('openSky').prepend(canvas)
-				$(".intro-2").css({ 'background': 'url(https://w.wallhaven.cc/full/4d/wallhaven-4dlgmg.jpg) no-repeat center center' })
-				$("footer").hide()
-				starrySky()
-			}
+	const nightStart = () => {
+		const today = new Date().toLocaleDateString()
+		const currentTime = Date.now()
+		const limitMinTime = new Date(`${today} 22:00:00`).getTime()
+		const limitMaxTime = new Date(`${today} 05:00:00`).getTime()
+
+		if (currentTime >= limitMinTime || currentTime <= limitMinTime) {
+			const canvas = `<canvas id="starrySky"></canvas>`
+			main.addClass('openSky').prepend(canvas)
+			$("footer").hide()
+			starrySky()
 		}
-	})
+	}
+
+	const init = () => {
+		nightStart()
+	}
+
+	init()
 }) 
