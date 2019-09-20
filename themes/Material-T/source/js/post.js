@@ -247,7 +247,7 @@ $(document).ready(function () {
 		const limitMinTime = new Date(`${today} 22:00:00`).getTime()
 		const limitMaxTime = new Date(`${today} 05:00:00`).getTime()
 
-		if (currentTime >= limitMinTime || currentTime <= limitMinTime) {
+		if (currentTime >= limitMinTime || currentTime <= limitMaxTime) {
 			const canvas = `<canvas id="starrySky"></canvas>`
 			main.addClass('openSky').prepend(canvas)
 			$("footer").hide()
