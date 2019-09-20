@@ -7,6 +7,10 @@ header,
   overflow-wrap: break-word;
 }
 
+* {
+    font-family: 'Content-font, Roboto, sans-serif';
+}
+
 body {
     background-color: #eee;
     color: #3c4858;
@@ -166,13 +170,13 @@ code {
 }
 
 .tocbot-link {
-    color: #34495e;
+    color: #74818D;
     font-size: 0.8rem;
 }
 
 .tocbot-active-link {
     font-weight: 600;
-    color: #1b93fb;
+    color: rgb(56, 132, 255);
 }
 
 .tocbot-is-collapsible {
