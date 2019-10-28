@@ -126,3 +126,29 @@ img {
 > 在页面点击、hover、滚动等事件会触发大面积的页面重绘或重排时，浏览器往往是没有准备的，只能被动使用cpu去计算与重绘，于是掉帧、卡顿就来了。
 > will-change属性就是在行为触发前，通知浏览器启动GPU渲染。
 > 不过will-change需要适度使用，全局开启GPU渲染的话，你的机器也受不了，这样反而是性能灾难。最好在事件发生时，加入此属性，事件结束时，及时将will-change去掉。
+
+## [多行文字省略]
+
+```html
+<style>
+.more_list {
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+</style>
+<body>
+  <div class="box">
+    <p class="more_list">测试多行文字测试多行文字测试多行文字测试多行文字测试多行文字测试多行文字测试多行文字测试多行文字测试多行文字测试多行文字</p>
+    <span class="more_list_en">howToDohowToDohowToDohowToDohowToDohowToDohowToDohowToDohowToDohowToDohowToDohowToDo</span>
+  </div>
+</body>
+```
+![19102801.gif](https://i.loli.net/2019/10/28/XE1Hq5i79FZeBhl.gif)
+
+> -webkit-line-clamp 是一个不规范的属性，限制一个块元素显示的文本行数，为了实现该效果，需要其他webkit属性配合
+> display属性为 -webkit-box ，-webkit-box-orient 用于控制盒子内子元素的排列顺序 vertical
+> 若标签内是英文，英文是不会自动换行的，需要加入 word-wrap: break-word; word-break: break-all;
