@@ -4,11 +4,11 @@ const attributes = [
   'autocapitalize="off"',
   'spellcheck="false"',
   'contenteditable="true"'
-]
+];
 
-const attributesStr = attributes.join(' ')
+const attributesStr = attributes.join(" ");
 
-hexo.extend.filter.register('after_post_render', data => {
+/* hexo.extend.filter.register('after_post_render', data => {
   while (/<pre>(([\s\S])*?)<\/pre>/.test(data.content)) {
     data.content = data.content.replace(/<pre>(([\s\S])*?)<\/pre>/, () => {
       let lastMatch = RegExp.lastMatch
@@ -20,4 +20,4 @@ hexo.extend.filter.register('after_post_render', data => {
     })
   }
   return data
-})
+}) */

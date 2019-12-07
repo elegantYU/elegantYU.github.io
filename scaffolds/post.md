@@ -1,7 +1,9 @@
 ---
-title: {{ title }}
-subtitle:
-date: {{ date }}
+title: { { title } }
+date: { { date } }
 tags:
-index_img: 
+subtitle:
+hide_excerpt: true
+banner:
+photos:
 ---
