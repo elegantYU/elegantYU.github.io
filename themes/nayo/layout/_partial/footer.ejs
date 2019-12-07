@@ -1,0 +1,10 @@
+<% var since = theme.footer.since %> <% var year = date(new Date(), 'YYYY') %>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="copyright">
+      &copy; <% if (since < year){%> <%= since %> - <% }%> <%= year %> Powered
+      by <%= theme.footer.author || theme.profile.author || config.author %>
+    </div>
+  </div>
+</footer>

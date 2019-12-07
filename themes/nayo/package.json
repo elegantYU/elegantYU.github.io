@@ -1,0 +1,35 @@
+{
+  "name": "hexo-theme-nayo",
+  "version": "0.4.0",
+  "description": "a concise theme for hexo.",
+  "scripts": {
+    "build": "webpack --config webpack.config.js --mode production",
+    "dev": "webpack --config webpack.config.js --watch --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemonreds/hexo-theme-nayo.git"
+  },
+  "author": "lemonreds",
+  "license": "MIT",
+  "homepage": "https://github.com/Lemonreds/hexo-theme-nayo#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^3.0.1",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}

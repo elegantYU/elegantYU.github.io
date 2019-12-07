@@ -1,0 +1,37 @@
+<section class="slideDownMin">
+
+  <% var name =  __('Page.Archives') %>
+  <%- partial('_partial/page-name',{icon:'icon-page-archive',name: name }) %>
+
+
+  <% var  date_format = config.date_format  %>
+  <% var last %>
+
+  <div class="archive">
+    <ul class="archive-post">
+      <% page.posts.each(function (post) { %>
+
+      <% var year = post.date.year() %>
+
+      <%if(last != year ){%>
+
+      <%# var posts = postsCount(site.posts , year) %>
+      <li class="archive-year">
+        <span class="year">
+          <span><%= year %></span>
+        </span>
+      </li>
+      <% last = year %>
+      <% }%>
+      <li class="archive-item">
+        <time class="time"> <%= date(post.date,  "MMM Do") %> </time>
+        <span class="title"> <a href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a></span>
+      </li>
+
+      <% }) %>
+    </ul>
+  </div>
+
+</section>
+
+<%- partial('_partial/paginator') %>
