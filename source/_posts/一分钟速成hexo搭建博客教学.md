@@ -4,9 +4,9 @@ subtitle: learn_hexo
 date: 2019-04-18 22:12:46
 hide_excerpt: true
 tags: [教程, 一分钟系列]
-banner: https://w.wallhaven.cc/full/nm/wallhaven-nm77x9.jpg
+banner: ../images/wallhaven2.jpg
 photos:
-  - https://w.wallhaven.cc/full/nm/wallhaven-nm77x9.jpg
+  - ../images/wallhaven2.jpg
 ---
 
 > 此篇博客乃在下历时月许，拖沓至今才准备出的 hexo+github 搭建博客教学。

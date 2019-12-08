@@ -19,6 +19,9 @@ before_script:
   - git config user.email "845384559@qq.com"
   - sed -i'' "s~https://github.com/elegantYU/elegantYU.github.io.git~https://${ACCESS_TOKEN}@github.com/elegantYU/elegantYU.github.io.git~" _config.yml
 script:
+  - cd themes/nayo
+  - npm install
+  - npm run build
   - hexo clean
   - hexo g
   - hexo d

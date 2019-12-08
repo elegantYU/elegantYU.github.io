@@ -4,7 +4,10 @@
   <div class="inner">
     <div class="copyright">
       &copy; <% if (since < year){%> <%= since %> - <% }%> <%= year %> Powered
-      by <%= theme.footer.author || theme.profile.author || config.author %>
+      by
+      <a href="<%= theme.social.Github %>" target="_blank">
+        <%= theme.footer.author || theme.profile.author || config.author %>
+      </a>
     </div>
   </div>
 </footer>

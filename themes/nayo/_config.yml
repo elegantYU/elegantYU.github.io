@@ -18,7 +18,7 @@ title: 白日
 # author为空时 Hexo/_config.yml 配置有效
 profile:
   author: elegantYU
-  logo: /images/logo.png
+  logo: /images/favicon.svg
   avatar: /images/avatar.jpg
 
 # site favicon
@@ -29,13 +29,13 @@ favicon: /images/favicon.png
 # social link
 social:
   Github: https://github.com/elegantYU
-  # Weibo:
   # Zhihu:
   # Facebook:
   # Twitter:
   # instagram:
   # LinkedIn:
   Neteasemusic: https://music.163.com/#/user/home?id=103973269
+  Weibo: https://weibo.com/u/5586907419
   # Telegram: /
 
 # site analytics

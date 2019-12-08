@@ -1,10 +1,11 @@
-
 <% if (post.photos && post.photos.length){ %>
-	
-	<div class="gallery">
-		<% for( i in post.photos){%>
-			<div class="image" 	
-			style="background-image: url(<%- url_for(post.photos[i])%>);"></div>
-		<%}%>  
-	</div>
+
+<div class="gallery">
+  <% for( i in post.photos){%>
+  <div
+    class="image opacityImage"
+    style="background-image: url(<%- url_for(post.photos[i])%>);"
+  ></div>
+  <%}%>
+</div>
 <%}%>
