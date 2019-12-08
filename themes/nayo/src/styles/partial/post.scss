@@ -27,6 +27,11 @@
   }
   .post-content {
     margin: 2.5rem 0;
+    .banner {
+      height: 24rem;
+      background-position: center center;
+      background-size: cover;
+    }
   }
 
   .bottom {
