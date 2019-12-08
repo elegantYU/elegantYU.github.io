@@ -22,6 +22,8 @@ script:
   - cd themes/nayo
   - npm install
   - npm run build
+  - cd ..
+  - cd ..
   - hexo clean
   - hexo g
   - hexo d
