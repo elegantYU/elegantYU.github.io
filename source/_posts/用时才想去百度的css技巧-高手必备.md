@@ -4,9 +4,9 @@ date: 2019-10-21 11:36:17
 subtitle: cssisgood
 tags: [css, 高手必备]
 hide_excerpt: true
-banner: ../images/wallhaven5.jpg
+banner: ../images/wallhaven5.png
 photos:
-  - ../images/wallhaven5.jpg
+  - ../images/wallhaven5.png
 ---
 
 换季了，多喝热水 ♨️

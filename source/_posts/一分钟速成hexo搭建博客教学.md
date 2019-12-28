@@ -4,9 +4,9 @@ subtitle: learn_hexo
 date: 2019-04-18 22:12:46
 hide_excerpt: true
 tags: [教程, 一分钟系列]
-banner: ../images/wallhaven2.jpg
+banner: ../images/wallhaven2.png
 photos:
-  - ../images/wallhaven2.jpg
+  - ../images/wallhaven2.png
 ---
 
 > 此篇博客乃在下历时月许，拖沓至今才准备出的 hexo+github 搭建博客教学。
