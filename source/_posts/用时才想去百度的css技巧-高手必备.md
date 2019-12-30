@@ -40,7 +40,7 @@ photos:
 ```scss
 ul {
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: space-between;
   li {
     width: 100px;
