@@ -22,8 +22,8 @@ function renderImg(source) {
       $(element).attr({
         "data-src": origin
       });
-      $(element).css("background-image", `url("${placeHolder}")`);
-      $(element).addClass("lazyload");
+      $(element).css("background-image", `url(${origin})`);
+      // $(element).addClass("lazyload");
     }
   });
 
@@ -34,10 +34,10 @@ function renderImg(source) {
       if (src && src !== placeHolder) {
         $(element).attr({
           "data-src": src,
-          src: placeHolder
+          src: src
         });
       }
-      $(element).addClass("lazyload");
+      // $(element).addClass("lazyload");
     }
   });
 
