@@ -165,6 +165,12 @@ img {
 </body>
 ```
 
+![19102801.gif](https://i.loli.net/2019/10/28/XE1Hq5i79FZeBhl.gif)
+
+> -webkit-line-clamp 是一个不规范的属性，限制一个块元素显示的文本行数，为了实现该效果，需要其他 webkit 属性配合
+> display 属性为 -webkit-box ，-webkit-box-orient 用于控制盒子内子元素的排列顺序 vertical
+> 若标签内是英文，英文是不会自动换行的，需要加入 word-wrap: break-word; word-break: break-all;
+
 ## [禁止当前盒子外的 scorll]
 
 ```css
@@ -178,9 +184,3 @@ img {
   *  [auto | contain | none]
   */
 ```
-
-![19102801.gif](https://i.loli.net/2019/10/28/XE1Hq5i79FZeBhl.gif)
-
-> -webkit-line-clamp 是一个不规范的属性，限制一个块元素显示的文本行数，为了实现该效果，需要其他 webkit 属性配合
-> display 属性为 -webkit-box ，-webkit-box-orient 用于控制盒子内子元素的排列顺序 vertical
-> 若标签内是英文，英文是不会自动换行的，需要加入 word-wrap: break-word; word-break: break-all;
