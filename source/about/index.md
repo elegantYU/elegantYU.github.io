@@ -15,7 +15,7 @@ cover: https://i.loli.net/2020/04/05/Rkw9oVFSliYqjNa.png
   
 ## 好友皆大佬
 
-{% bookmark title="christian" link="https://justwink.cn/" cover="https://i.loli.net/2020/04/05/YQqb61vwsWAF2Ka.jpg" %}
+{% bookmark title="christian" link="https://justwink.cn" cover="https://i.loli.net/2020/04/05/YQqb61vwsWAF2Ka.jpg" %}
 
 ## 我在哪
 

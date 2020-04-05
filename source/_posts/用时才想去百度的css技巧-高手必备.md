@@ -2,7 +2,7 @@
 title: 用时才想去百度的css技巧(高手必备)
 date: 2019-10-21 11:36:17
 subtitle: cssisgood
-categories: [css, 高手必备]
+categories: 基础
 hide_excerpt: true
 cover: https://i.loli.net/2020/04/05/8BrkZ9GFvLbHDsi.jpg
 ---
