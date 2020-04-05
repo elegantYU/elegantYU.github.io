@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: elegantYU
-subtitle: 识盈虚之有数，觉宇宙之无穷
-description: 大音希声,大象无形
-keywords: 技术,前端,学习,交流,JavaScript,NodeJs,Vue,插件,杂学,扯淡，教程，工具
+title: elegantYu
+subtitle: And if it happens again, I might move so slightly
+description: elegantYu的快乐小屋~
+keywords: 技术,前端,学习,交流,javascript,nodejs,vue,插件,杂学,扯淡，教程，工具
 author: elegantYU
 language: zh-CN
 timezone: UTC
@@ -40,9 +40,11 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: false
+  line_number: true
   auto_detect: true
-  tab_replace: true
+  tab_replace:
+  hljs: true
+  theme: monokai
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -81,7 +83,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: nayo
+theme: flex-block
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

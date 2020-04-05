@@ -3,10 +3,8 @@ title: 一分钟速成hexo搭建博客教学
 subtitle: learn_hexo
 date: 2019-04-18 22:12:46
 hide_excerpt: true
-tags: [教程, 一分钟系列]
-banner: ../images/wallhaven2.png
-photos:
-  - ../images/wallhaven2.png
+categories: [教程, 一分钟系列]
+cover: https://i.loli.net/2020/04/05/x3GcpNR4Vqr9HTP.jpg
 ---
 
 > 此篇博客乃在下历时月许，拖沓至今才准备出的 hexo+github 搭建博客教学。
@@ -16,7 +14,8 @@ photos:
 
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=475073576&auto=1&height=66"></iframe>
+{% aplayer name="to the seaside..." artist="silky soap" url="http://m10.music.126.net/20200405204825/5e96a995cd8b00ca7280bff3714f945a/ymusic/e68a/99ca/72e6/3c2ea48d52fa82faf8380fdff28772e9.mp3" lrc="" cover="https://i.loli.net/2020/04/05/5Sv8WXw2RKpDIsT.jpg" %}
+
 
 ## 博客环境
 
@@ -384,7 +383,64 @@ $ git push
   ```
 
 - `highlight-wrap`的 css 样式，写在你的主题目录下的全局 css/less/scss/...文件中
-  `scss /* mac panel */ .highlight-wrap[data-rel] { position: relative; overflow: hidden; border-radius: 5px; box-shadow: 0 10px 30px 0px rgba(0,0,0,0.4); margin: 35px 0; } .highlight-wrap[data-rel] ::-webkit-scrollbar { height: 10px; } .highlight-wrap[data-rel] ::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); border-radius: 10px; } .highlight-wrap[data-rel] ::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); } .highlight-wrap[data-rel] ::before { color: white; content: attr(data-rel); height: 38px; line-height: 38px; background: #21252b; color: #fff; font-size: 16px; position: absolute; top: 0; left: 0; width: 100%; font-family: 'Source Sans Pro', sans-serif; font-weight: bold; padding: 0px 80px; text-indent: 15px; float: left; } .highlight-wrap[data-rel] ::after { content: " "; position: absolute; -webkit-border-radius: 50%; border-radius: 50%; background: #fc625d; width: 12px; height: 12px; top: 0; left: 20px; margin-top: 13px; -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b; box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b; z-index: 3; } .highlight-wrap[data-rel] pre { margin: 0; padding: 40px 0 10px; }`
+  ```css
+   /* mac panel */ 
+   .highlight-wrap[data-rel] { 
+     position: relative; 
+     overflow: hidden; 
+     border-radius: 5px; 
+     box-shadow: 0 10px 30px 0px rgba(0,0,0,0.4); 
+     margin: 35px 0; 
+    }
+    .highlight-wrap[data-rel] ::-webkit-scrollbar { 
+      height: 10px; 
+    } 
+    .highlight-wrap[data-rel] ::-webkit-scrollbar-track { 
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+      border-radius: 10px; 
+    } 
+    .highlight-wrap[data-rel] ::-webkit-scrollbar-thumb { 
+      border-radius: 10px; 
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    } 
+    .highlight-wrap[data-rel] ::before { 
+      color: white; 
+      content: attr(data-rel); 
+      height: 38px; 
+      line-height: 38px; 
+      background: #21252b; 
+      color: #fff; 
+      font-size: 16px; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      font-family: 'Source Sans Pro', sans-serif; 
+      font-weight: bold; 
+      padding: 0px 80px; 
+      text-indent: 15px; 
+      float: left; 
+    } 
+    .highlight-wrap[data-rel] ::after { 
+      content: " "; 
+      position: absolute; 
+      -webkit-border-radius: 50%; 
+      border-radius: 50%; 
+      background: #fc625d; 
+      width: 12px; 
+      height: 12px; 
+      top: 0; 
+      left: 20px; 
+      margin-top: 13px; 
+      -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b; 
+      box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b; 
+      z-index: 3; 
+    } 
+    .highlight-wrap[data-rel] pre { 
+      margin: 0; 
+      padding: 40px 0 10px; 
+    }
+  ```
 - 全部配置完毕，运行`hexo s`，查看运行效果，基本上就已经完成了(css 细节自行调节)
 
 #### live2d 动画

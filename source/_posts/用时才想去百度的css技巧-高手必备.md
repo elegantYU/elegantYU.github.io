@@ -2,11 +2,9 @@
 title: 用时才想去百度的css技巧(高手必备)
 date: 2019-10-21 11:36:17
 subtitle: cssisgood
-tags: [css, 高手必备]
+categories: [css, 高手必备]
 hide_excerpt: true
-banner: ../images/wallhaven5.png
-photos:
-  - ../images/wallhaven5.png
+cover: https://i.loli.net/2020/04/05/8BrkZ9GFvLbHDsi.jpg
 ---
 
 换季了，多喝热水 ♨️

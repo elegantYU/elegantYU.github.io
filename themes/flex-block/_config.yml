@@ -1,0 +1,88 @@
+# Header
+menu:
+  home: /
+  # LINK: /links
+  # tags: /tags
+  categories: /categories
+  about: /about
+# logo: https://qiniu.miiiku.xyz/src/images/logo.png
+banner: https://i.loli.net/2020/04/05/qoCnBcwzDYeP24A.png
+# banner: css/images/banner.jpg
+
+# large cover
+# long: [article, link]
+# short: [category, tag]
+large_legnth:
+  long: 10
+  short: 5
+
+# 一言
+# docs: https://hitokoto.cn/api
+# type: [a, b, c, d, e, f, g]
+hitokoto:
+  enable: true
+  type: h
+
+# valine 评论
+# docs: https://valine.js.org
+# You can get your appid and appkey from https://leancloud.cn
+valine:
+  enable: true
+  appId: vleTAgIdCbun9rmM6K65SSbh-gzGzoHsz
+  appKey: 190U0TtqzdxuXHQdHjheKbDE
+  avatar: elegantYu
+  placeholder: "It's a nice day with you around~ "
+  notify: true
+  visitor: true
+  pageSize: 10
+
+disqus:
+  enable: true
+  website: 
+  error: 如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w
+
+# dplayer 视频播放
+# docs: http://dplayer.js.org/#/zh-Hans/
+dplayer:
+  enable: true
+  theme: "#b7daff"
+  autoplay: false
+  loop: false
+  mutex: true
+
+# aplayer 音频播放
+# docs: https://aplayer.js.org/#/zh-Hans/
+aplayer:
+  enable: true
+  theme: "#b7daff"
+  autoplay: false
+  loop: false
+  mutex: true
+  lrcType: 3
+
+# waterfall 瀑布流
+# docs: https://github.com/miiiku/waterfall
+# Specific configuration information go to `layout/plug-in/waterfall.ejs`
+waterfall:
+  enable: true
+
+# zoom 图片预览
+# docs: https://github.com/miiiku/zoom
+# Specific configuration information go to `layout/plug-in/zoom.ejs`
+zoom:
+  enable: true
+
+
+# widget behavior
+archive_type: 'monthly'
+show_count: false
+
+# beian
+beian: 
+
+# Miscellaneous
+google_analytics: 
+gauges_analytics: 
+baidu_analytics: 
+tencent_analytics: 
+favicon: /favicon.ico

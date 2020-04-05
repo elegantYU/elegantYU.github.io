@@ -1,0 +1,114 @@
+.header-container.post .post-text
+  text-align: left 
+
+.header-content
+  position: relative
+  width: 100%
+  margin: auto
+  display: flex
+  align-items: center
+  justify-content: center
+  padding-top: navbar-height
+
+.post-image
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: -1
+  image-mask()
+    
+// post text
+.post-text
+  width: inner-width
+  max-width 100%
+  max-height: 100%
+  overflow: hidden
+  padding: 0 inner-padding
+  text-align: center
+  color: #ffffff
+
+// tag
+.type-wrap
+  a
+    display: inline-block
+    padding: 5px 12px
+    margin: 0 2px 1px 0
+    color: #161b3d;
+    background-color: #f4f4f4
+    border-radius: 20px
+    font-size: 10px
+    font-weight: 700
+    letter-spacing: 1.5px
+    transition: 0.3s all
+
+    &:hover
+      background-color: #2821fc
+      color: #ffffff
+
+// title
+.title-wrap
+  font-weight: 700
+  line-height: 1.5
+  overflow: hidden
+  text-overflow: ellipsis
+  word-break: break-word
+
+// sub title
+.title-sub-wrap
+  margin: 0
+
+// desktop >=768
+@media screen and (min-width: 768px)
+  @keyframes move {
+    0% {
+      transform: translate3d(0, 0, 0)
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0)
+    }
+  }
+
+  .header-container
+    position: relative
+    overflow: hidden
+
+    // &::before
+    //   position: absolute
+    //   left: 0
+    //   bottom: -1px
+    //   content: ""
+    //   width: 200%
+    //   height 100%
+    //   display: block
+    //   background-image: url("/images/wave-light.png")
+    //   background-repeat: repeat-x
+    //   background-position: left bottom 
+    //   background-size: 50% auto
+    //   animation move 10s linear infinite
+
+
+  .header-content
+    min-height: desktop-banner-height
+    padding-bottom: desktop-banner-margin
+
+  .title-wrap
+    font-size: font-desktop-large
+    margin: 25px 0
+
+  .title-sub-wrap
+    font-size: font-desktop-commonly
+
+// mobile 768<
+@media screen and (max-width: 767px)
+  .header-content
+    min-height: mobile-banner-height
+    padding-bottom: mobile-banner-margin
+
+  .title-wrap
+    font-size: font-mobile-large
+    margin: 20px 0
+
+  .title-sub-wrap
+    font-size: font-mobile-commonly
