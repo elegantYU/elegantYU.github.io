@@ -28,10 +28,10 @@ hitokoto:
 # You can get your appid and appkey from https://leancloud.cn
 valine:
   enable: true
-  appId: vleTAgIdCbun9rmM6K65SSbh-gzGzoHsz
-  appKey: 190U0TtqzdxuXHQdHjheKbDE
+  appId: 5xXAw8mGSxsiAVvItnDTlc1Q-gzGzoHsz
+  appKey: izanFwv9WmbM99bQQKMDt6jj
   avatar: elegantYu
-  placeholder: "It's a nice day with you around~ "
+  placeholder: "我卢本伟！没有开挂！"
   notify: true
   visitor: true
   pageSize: 10
