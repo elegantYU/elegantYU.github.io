@@ -128,32 +128,10 @@ feed:
   content_limit: 140
   content_limit_delim: " "
 
-# PWA
-pwa:
-  manifest:
-    path: /manifest.json
-    body:
-      name: ElegantYu's Blog
-      short_name: gayhub
-      icons:
-        - src: /favicon.ico
-          sizes: 64x64
-          type: image/png
-      start_url: /index.html
-      theme_color: '#ffffff'
-      background_color: '#ffffff'
-      display: standalone
-  serviceWorker:
-    path: /sw.js
-    preload:
-      urls:
-        - /
-      posts: 200
-    opts:
-      networkTimeoutSeconds: 5
-    routes:
-      - pattern: !!js/regexp /.*\.(js|css|jpg|jpeg|png|gif)$/
-        strategy: cacheFirst
-      - pattern: !!js/regexp /\//
-        strategy: networkFirst
-  priority: 5
+#service-worker
+service_worker:
+  maximumFileSizeToCacheInBytes: 5242880
+  staticFileGlobs:
+  - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  stripPrefix: public
+  verbose: true

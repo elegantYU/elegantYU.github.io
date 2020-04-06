@@ -1,0 +1,12 @@
+{
+  "short_name": "gayhub",
+  "name": "ElegantYu's Blog",
+  "icon": [
+      {
+          "src": "/favicon.ico",
+          "type": "image/png",
+          "sizes": "64x64"
+      }
+  ],
+  "start_url": "/index.html"
+}
