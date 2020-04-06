@@ -1,5 +1,5 @@
 ---
-title: 用时才想去百度的css技巧(高手必备)
+title: 用时才想去百度的css技巧
 date: 2019-10-21 11:36:17
 subtitle: cssisgood
 categories: 基础
