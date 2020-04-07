@@ -1,12 +1,14 @@
 {
   "short_name": "gayhub",
   "name": "ElegantYu's Blog",
-  "icon": [
+  "display": "standalone",
+  "icons": [
       {
-          "src": "/favicon.ico",
+          "src": "/images/favicon.png",
           "type": "image/png",
-          "sizes": "64x64"
+          "sizes": "200x200"
       }
   ],
+  "background_color": "#fff",
   "start_url": "/index.html"
 }
