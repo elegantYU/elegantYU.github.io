@@ -17,6 +17,8 @@ cover: https://i.loli.net/2020/04/05/Rkw9oVFSliYqjNa.png
 
 {% bookmark title="christian" link="https://justwink.cn" cover="https://i.loli.net/2020/04/05/YQqb61vwsWAF2Ka.jpg" %}
 
+{% bookmark title="yank" link="https://frankroad.github.io/" cover="https://static.pictureknow.com/03634afd690a42c5a178a6ec479f2cea.png" %}
+
 ## 我在哪
 
   - github: https://github.com/elegantyu
