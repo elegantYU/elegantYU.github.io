@@ -17,7 +17,7 @@ cover: https://i.loli.net/2020/04/05/Rkw9oVFSliYqjNa.png
 
 {% bookmark title="christian" link="https://justwink.cn" cover="https://i.loli.net/2020/04/05/YQqb61vwsWAF2Ka.jpg" %}
 
-{% bookmark title="yank" link="https://frankroad.github.io/" cover="https://static.pictureknow.com/03634afd690a42c5a178a6ec479f2cea.png" %}
+{% bookmark title="yank" link="https://frankroad.github.io/" cover="https://i.loli.net/2020/04/07/IyAOd6Ujc8ToMwC.png" %}
 
 ## 我在哪
 
