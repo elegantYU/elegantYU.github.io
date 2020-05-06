@@ -21,11 +21,12 @@ cover: https://i.loli.net/2020/04/06/rA86NDZxPkJHfc3.jpg
 const map = new Map()
 
 // 操作方法
-map.set('dog', '一种动物')  //  增
-map.get('dog')            //  '一种动物' 查
 
-map.has('tian dog')       //  false 断言
-map.delete('dog')         //  true 删除
+map.set('dog', '一种动物')  //  增
+map.get('dog')  //  '一种动物' 查
+
+map.has('tian dog') //  false 断言
+map.delete('dog') //  true 删除
 
 // 遍历方法
 map.keys()  //  返回键名遍历器

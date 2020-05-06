@@ -81,7 +81,7 @@ show_count: false
 beian: 
 
 # Miscellaneous
-google_analytics: 
+google_analytics: UA-165699409-1
 gauges_analytics: 
 baidu_analytics: 
 tencent_analytics: 
