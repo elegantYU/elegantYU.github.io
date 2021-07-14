@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>elegantYu</title>
+  
+  <subtitle>And if it happens again, I might move so slightly</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://elegantyu.github.io/"/>
+  <updated>2021-07-14T10:35:29.488Z</updated>
+  <id>https://elegantyu.github.io/</id>
+  
+  <author>
+    <name>elegantYU</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法-删除链表倒数第n个节点</title>
+    <link href="https://elegantyu.github.io/2021/07/14/algorithm-reomveNodeFromEnd/"/>
+    <id>https://elegantyu.github.io/2021/07/14/algorithm-reomveNodeFromEnd/</id>
+    <published>2021-07-14T17:26:26.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;干算法第三天&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="算法" scheme="https://elegantYU.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法-z字形变换</title>
+    <link href="https://elegantyu.github.io/2021/07/13/algorithm-covertz/"/>
+    <id>https://elegantyu.github.io/2021/07/13/algorithm-covertz/</id>
+    <published>2021-07-13T15:15:08.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;肝算法第一天&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="算法" scheme="https://elegantYU.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法-三数之和</title>
+    <link href="https://elegantyu.github.io/2021/07/12/algorithm-sumthreenum/"/>
+    <id>https://elegantyu.github.io/2021/07/12/algorithm-sumthreenum/</id>
+    <published>2021-07-12T18:09:35.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;肝算法第一天&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="算法" scheme="https://elegantYU.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020前端面试题集-vue向</title>
+    <link href="https://elegantyu.github.io/2021/01/07/interview-2020/"/>
+    <id>https://elegantyu.github.io/2021/01/07/interview-2020/</id>
+    <published>2021-01-07T17:19:44.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;2020下半年并不顺利，产品被其他平台诉讼下架，于是公司解散了无收益且吃钱的技术团队。突发事件显然超出了我的预期计划，在边玩边玩边玩边看题了大半月后，开始踏上面试之路。&lt;/p&gt;
+&lt;p&gt;这里集合一下本人遇到的全部面试题，题目顺序按照面试流程和出现频率降序，若是有点名气的厂会加
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CyberPunk2077</title>
+    <link href="https://elegantyu.github.io/2020/12/31/CyberPunk2077/"/>
+    <id>https://elegantyu.github.io/2020/12/31/CyberPunk2077/</id>
+    <published>2020-12-31T11:33:55.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;“赛博朋克2077真的是2020年我玩过的最精彩的游戏”  ——
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="游戏" scheme="https://elegantYU.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-最长回文子串</title>
+    <link href="https://elegantyu.github.io/2020/11/09/longest-palindromic-substring/"/>
+    <id>https://elegantyu.github.io/2020/11/09/longest-palindromic-substring/</id>
+    <published>2020-11-09T15:55:26.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;最长回文子串-5&quot;&gt;&lt;a href=&quot;#最长回文子串-5&quot; class=&quot;headerlink&quot; title=&quot;最长回文子串 - 5&quot;&gt;&lt;/a&gt;最长回文子串 - 5&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="leetcode" scheme="https://elegantYU.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-两数相加</title>
+    <link href="https://elegantyu.github.io/2020/11/04/add-two-numbers/"/>
+    <id>https://elegantyu.github.io/2020/11/04/add-two-numbers/</id>
+    <published>2020-11-04T18:14:39.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;两数相加-2&quot;&gt;&lt;a href=&quot;#两数相加-2&quot; class=&quot;headerlink&quot; title=&quot;两数相加 - 2&quot;&gt;&lt;/a&gt;两数相加 - 2&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="leetcode" scheme="https://elegantYU.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>私人珍藏大放送</title>
+    <link href="https://elegantyu.github.io/2020/06/13/wallpagerShare2006/"/>
+    <id>https://elegantyu.github.io/2020/06/13/wallpagerShare2006/</id>
+    <published>2020-06-13T21:03:32.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在下自幼便对文艺方向的事物充满着好奇向往，在艺术文学领域展现了独特的天赋和创造力。&lt;br&gt;基于种种原因，我的创作之路在初三时期缓缓地画上了分号，之后，随着互联网浪潮的侵袭及个人求学规划的影响，重续道路想法未熄，却已无青春时每日躁动不安喷渤狂涌一般的灵感。偶有作品，也是带着一
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="share" scheme="https://elegantYU.github.io/tags/share/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一分钟搭建webpack+react的chrome-extensions项目</title>
+    <link href="https://elegantyu.github.io/2020/06/07/webpack+react/"/>
+    <id>https://elegantyu.github.io/2020/06/07/webpack+react/</id>
+    <published>2020-06-07T15:00:38.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;客厅吹来的徐徐清风，一缕缕带走房间里沉闷的空气，窗外杨树摇摆着夏日繁茂的枝丫，趴在刚换完床单的床上，耳边“梭梭”声若隐若现，大自然的呢喃远比合成的白噪音悦耳。&lt;/p&gt;
+&lt;p&gt;周日，又一个阳光且慵懒的下午。&lt;/p&gt;
+&lt;p&gt;这是发布个人第二款浏览器插件&lt;strong&gt;Color
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="一分钟教程" scheme="https://elegantYU.github.io/tags/%E4%B8%80%E5%88%86%E9%92%9F%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>commit -am的正确姿势</title>
+    <link href="https://elegantyu.github.io/2020/05/11/git-commit-am/"/>
+    <id>https://elegantyu.github.io/2020/05/11/git-commit-am/</id>
+    <published>2020-05-11T10:18:22.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;记一次尴尬的提交…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;正常命令提交的某日&lt;br&gt;“每次都要add再commit，好麻烦啊，找一找有没有快捷命令..”&lt;br&gt;“还真有！&lt;code&gt;git commit -am
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="git" scheme="https://elegantYU.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Map不挺好用的,你还...</title>
+    <link href="https://elegantyu.github.io/2020/04/06/es6-map/"/>
+    <id>https://elegantyu.github.io/2020/04/06/es6-map/</id>
+    <published>2020-04-06T15:12:45.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;闲来无事水一篇。&lt;/p&gt;
+&lt;h2 id=&quot;Map&quot;&gt;&lt;a href=&quot;#Map&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="都是皮毛" scheme="https://elegantYU.github.io/tags/%E9%83%BD%E6%98%AF%E7%9A%AE%E6%AF%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>梦随星逝了无痕</title>
+    <link href="https://elegantyu.github.io/2020/01/04/back-to-reality/"/>
+    <id>https://elegantyu.github.io/2020/01/04/back-to-reality/</id>
+    <published>2020-01-04T22:23:03.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;what am I doing …&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="夜晚" scheme="https://elegantYU.github.io/categories/%E5%A4%9C%E6%99%9A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>可选链?. 双问号??，这都是些啥</title>
+    <link href="https://elegantyu.github.io/2019/12/28/optional-chaining/"/>
+    <id>https://elegantyu.github.io/2019/12/28/optional-chaining/</id>
+    <published>2019-12-28T13:58:21.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上海的天气，终于能穿棉衣了&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="都是皮毛" scheme="https://elegantYU.github.io/categories/%E9%83%BD%E6%98%AF%E7%9A%AE%E6%AF%9B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>迷僧</title>
+    <link href="https://elegantyu.github.io/2019/12/08/lyric-ms/"/>
+    <id>https://elegantyu.github.io/2019/12/08/lyric-ms/</id>
+    <published>2019-12-08T16:05:00.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;div class=&quot;aplayer&quot; data-name=&#39;迷僧&#39; data-artist=&#39;雪沉乐队&#39; data-url=&#39;http://m10.music.126.net/20200405173757/e7edb50ad7f87bd0f43c2bdf74c0ece3/ymusic/f094/d5e0/b304/4c2bd204657d3b4b5aa0fda8dd8c3adc.mp3&#39; data-lrc data-cover=&#39;https://i.loli.net/2020/04/05/JOno3B68Xw5v1M4.jpg&#39; &gt;&lt;/div&gt;
+
+&lt;p&gt;邪鬼横行, 满目佞宗.&lt;br&gt;鬼神乱世, 不得安生.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="摇滚" scheme="https://elegantYU.github.io/categories/%E6%91%87%E6%BB%9A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用时才想去百度的css技巧</title>
+    <link href="https://elegantyu.github.io/2019/10/21/cssisgood/"/>
+    <id>https://elegantyu.github.io/2019/10/21/cssisgood/</id>
+    <published>2019-10-21T11:36:17.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;换季了，多喝热水 ♨️&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="基础" scheme="https://elegantYU.github.io/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>惬意</title>
+    <link href="https://elegantyu.github.io/2019/09/19/agreeable/"/>
+    <id>https://elegantyu.github.io/2019/09/19/agreeable/</id>
+    <published>2019-09-19T20:57:00.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;杂绪&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="夜晚" scheme="https://elegantYU.github.io/categories/%E5%A4%9C%E6%99%9A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>H5通用功能点汇总</title>
+    <link href="https://elegantyu.github.io/2019/09/02/h5upup/"/>
+    <id>https://elegantyu.github.io/2019/09/02/h5upup/</id>
+    <published>2019-09-02T22:26:30.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;作为一名有操守的程序员，鄙人，只发干货！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此篇文章作为 h5 前端路上的功能点、工具总结；如有更好的方法，请在评论区留下你的身影&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="基础" scheme="https://elegantYU.github.io/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一分钟速成科学上网教学</title>
+    <link href="https://elegantyu.github.io/2019/08/07/GFW/"/>
+    <id>https://elegantyu.github.io/2019/08/07/GFW/</id>
+    <published>2019-08-07T21:09:07.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;琐事缠身，许久未更博。为了找些乐子，不久前突发奇想，要搞一搞小程序。&lt;br&gt;怎么说也要搞台服务器玩一玩，最好能科学上网的国外海外服务器&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="一分钟教程" scheme="https://elegantYU.github.io/categories/%E4%B8%80%E5%88%86%E9%92%9F%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一分钟速成hexo搭建博客教学</title>
+    <link href="https://elegantyu.github.io/2019/04/18/learn_hexo/"/>
+    <id>https://elegantyu.github.io/2019/04/18/learn_hexo/</id>
+    <published>2019-04-18T22:12:46.000Z</published>
+    <updated>2021-07-14T10:35:29.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;此篇博客乃在下历时月许，拖沓至今才准备出的 hexo+github 搭建博客教学。&lt;br&gt;从头至尾皆是本人的亲生体会，希望对大家有所借鉴和帮助&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="一分钟教程" scheme="https://elegantYU.github.io/categories/%E4%B8%80%E5%88%86%E9%92%9F%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+</feed>
