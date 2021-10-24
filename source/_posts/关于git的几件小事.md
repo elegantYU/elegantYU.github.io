@@ -141,7 +141,7 @@ hotfix | 来自发布后出现的 bug 需要从 master 拉取 hotfix 分支进�
 
 1. git add 后想撤销
    
-  编辑器的 git 控制台可以操作撤回，或者使用 `git reset HEAD`命令
+    编辑器的 git 控制台可以操作撤回，或者使用 `git reset HEAD`命令
 
 2. git commit 后想撤回
 
@@ -194,15 +194,15 @@ hotfix | 来自发布后出现的 bug 需要从 master 拉取 hotfix 分支进�
   
 5. 压缩后后悔了，怎么撤销
 
-  这里要了解下 `git reflog` 可以查看 git 的所有操作记录，其内所有的 commitid 都是可以进行回滚的
+    这里要了解下 `git reflog` 可以查看 git 的所有操作记录，其内所有的 commitid 都是可以进行回滚的
 
 6. 分支重命名
 
-  在需要改名的分支下 `git branch -m <newname>`
+    在需要改名的分支下 `git branch -m <newname>`
 
 7. 修改 commit message
 
-  `git commit --amend`
+    `git commit --amend`
 
 ...
 
