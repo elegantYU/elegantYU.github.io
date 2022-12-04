@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <meta name="description" content="elegantYu的快乐小屋~">
+  
+
+  
+    <meta name="keywords" content="技术,前端,学习,交流,javascript,nodejs,vue,插件,杂学,扯淡，教程，工具">
+  
+
+  
+    <meta name="author" content="elegantYU">
+  
+
+  
+
+  
+
+  <title>H5通用功能点汇总 | elegantYu</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css">
+<link rel="alternate" href="/atom.xml" title="elegantYu" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          elegantYu
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">home</a></li>
+        
+          <li class="navbar-list-item"><a href="/categories">categories</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">about</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<!-- header container -->
+<header class="header-container post">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-image" style="background-image: url(https://i.loli.net/2020/04/06/bAzhi5pl8nBxOqQ.jpg)"></div>
+      <div class="post-text">
+        <div class="type-wrap">
+          <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+        </div>
+        <h1 class="title-wrap">H5通用功能点汇总</h1>
+        <h2 class="title-sub-wrap">
+          <strong>elegantYU</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" target="_blank" rel="noopener" class="article-date">
+    <time datetime="2019-09-02T22:26:30.000Z" itemprop="datePublished">2019-09-02</time>
+  </a>
+
+        </h2>
+      </div>
+    </div>
+  
+
+  
+  
+
+  </header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <blockquote>
+<p>作为一名有操守的程序员，鄙人，只发干货！</p>
+</blockquote>
+<blockquote>
+<p>此篇文章作为 h5 前端路上的功能点、工具总结；如有更好的方法，请在评论区留下你的身影</p>
+</blockquote>
+<a id="more"></a>
+
+<p>连做三个 h5 项目，或多或少积累一点开发的经验，此篇文章一是记录，二为分享。</p>
+<p>开整！</p>
+<h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>三次项目皆使用 vue 框架开发，使用 vue-cli3.x 生成项目主体已是相当熟稔，<u><a href="https://cli.vuejs.org/zh/" target="_blank" rel="noopener">vue-cli 传送门</a></u>。</p>
+<p>使用 axios 请求库，也可自行选择顺手的使用。</p>
+<h2 id="微信-sdk-的再次封装"><a href="#微信-sdk-的再次封装" class="headerlink" title="微信 sdk 的再次封装"></a>微信 sdk 的再次封装</h2><p>微信官方提供一个 jsbridge 脚本，能够很方便的使用设备的一些功能及微信本身提供的功能。</p>
+<p>我们需要做的是在项目中更好的调用它。</p>
+<ul>
+<li><p>在<code>public/index.html</code>模版 html 里的 head 中加入 wxsdk(<u><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115" target="_blank" rel="noopener">传送门</a></u>)，或直接复制此条<code>http://res.wx.qq.com/open/js/jweixin-1.4.0.js</code>(微信目前最新版本 js)</p>
+</li>
+<li><p>在<code>src</code>目录下，我们创建一个<code>utils</code>文件夹内创建<code>wxsdk.js</code>，在其中加上</p>
+</li>
+</ul>
+<pre><code class="javascript">import axios from &quot;axios&quot;;
+
+const wxsdk = {
+  init(url) {
+    // 顾名思义，用于初始化wxconfig的方法
+    return new Promise(resolve =&gt; {
+      axios
+        .get(&quot;请求微信config的后端接口&quot;, { params: { url } })
+        .then(({ appId, timestamp, nonceStr, signature }) =&gt; {
+          wx.config({
+            debug: false, // 后面可以用于调试config是否配置成功
+            appId,
+            timestamp,
+            nonceStr,
+            signature,
+            jsApiList: [
+              &quot;chooseImage&quot;,
+              &quot;uploadImage&quot;,
+              &quot;getLocalImgData&quot;,
+              &quot;updateAppMessageShareData&quot;,
+              &quot;updateTimelineShareData&quot;
+            ] // 在此注册你需要使用的api
+          });
+          resolve(); //  配置完成的promise回调
+        });
+    });
+  }
+};
+
+export default wxsdk;</code></pre>
+<ul>
+<li>下面把初始化方法放入全局的路由守卫中，使用户在每个页面打开时都注册一次。</li>
+</ul>
+<pre><code class="javascript">// router.js中
+import Vue from &#39;vue&#39;
+import Router from &#39;vue-router&#39;
+import wxsdk from &#39;../utils/wxsdk&#39;
+
+Vue.use(Router)
+
+const router = new Router({
+    //  没看错，使用的是hash，
+    //  使用hash是因为方便后端直接使用链接进行其他的带参操作
+    //  同时，也避免了在nginx中部署时对前端路由的操控
+    mode: &#39;hash&#39;,
+    routes: [...]
+})
+
+router.afterEach((to, from, next) =&gt; {
+    // 此处较为关键，由于我们使用的是单页应用，内部路由皆为虚拟路由，
+    // 并且是hash模式，需要获取 # 前的路由作为请求路径
+    wxsdk.init(location.href.split(&#39;#&#39;)[0])
+})
+
+export default router</code></pre>
+<ul>
+<li>加入一个封装上传本地图片方法作为例子</li>
+</ul>
+<pre><code class="js">chooseImage (count) {
+    return new Promise(resolve =&gt; {
+      wx.ready(() =&gt; {
+        wx.chooseImage({
+          count, //  用于控制上传图片的数量
+          sizeType: [&#39;original&#39;, &#39;compressed&#39;],
+          sourceType: [&#39;album&#39;, &#39;camera&#39;],
+          success: ({ localIds }) =&gt; {
+            resolve(localIds)
+          }
+        })
+      })
+    })
+},</code></pre>
+<ul>
+<li>若项目中有需要判断微信的 js 是否加载完毕，可以使用下面方法</li>
+</ul>
+<pre><code class="javascript">// wxsdk.js中
+const wxsdk = {
+    ...,
+    check (cb) {
+      if (typeof WeixinJSBridge === &#39;object&#39; &amp;&amp; typeof WeixinJSBridge.invoke === &#39;function&#39;) {
+        cb()
+      } else {
+        if (document.addEventListener) {
+          document.addEventListener(&#39;WeixinJSBridgeReady&#39;, cb, false)
+        } else if (document.attachEvent) {
+          document.attachEvent(&#39;WeixinJSBridgeReady&#39;, cb)
+          document.attachEvent(&#39;onWeixinJSBridgeReady&#39;, cb)
+        }
+      }
+    },
+}</code></pre>
+<ul>
+<li>可以在页面的<code>mounted</code>周期中引入</li>
+</ul>
+<pre><code class="vue">&lt;script&gt;
+export default {
+  mounted() {
+    this.$wxsdk.check(() =&gt; {
+      console.log(&quot;微信js加载完毕,进入页面&quot;);
+    });
+  }
+};
+&lt;/script&gt;</code></pre>
+<ul>
+<li>为了方便我们对 wxsdk 的使用，可以在<code>main.js</code>中将此对象挂载到 vue.prototype 上</li>
+</ul>
+<pre><code class="js">import wxsdk from &quot;./utils/wxsdk&quot;;
+
+Vue.prototype.$wxsdk = wxsdk;</code></pre>
+<p>微信 jssdk 的封装使用基本完成。</p>
+<h2 id="页面适配"><a href="#页面适配" class="headerlink" title="页面适配"></a>页面适配</h2><p>我使用的是 rem 单位布局，根据设配的屏幕宽度与设计稿的宽度比计算出根元素的像素大小，从而使一张设计图适配不同的手机屏幕</p>
+<pre><code class="js">// utils/util.js中
+
+const deviceRem = size =&gt; {
+  const docEl = document.documentElement;
+  const clientWidth = docEl.clientWidth;
+  const reSize = () =&gt;
+    (docEl.style.fontSize =
+      clientWidth &gt;= size ? &quot;100px&quot; : 100 * (clientWidth / size) + &quot;px&quot;);
+  document.addEventListener(&quot;DOMContentLoaded&quot;, reSize, false);
+};
+deviceRem(1125);</code></pre>
+<h2 id="第三方字体包"><a href="#第三方字体包" class="headerlink" title="第三方字体包"></a>第三方字体包</h2><p>根据 h5 的不同业务特点，可能需要引入各种个样的字体包，比如我的第一个 h5 就使用了<code>站酷快乐体xxx</code>的字体包</p>
+<pre><code class="scss">@font-face {
+  font-family: &quot;happyFonts&quot;;
+  src: url(&quot;../fonts/站酷快乐体2016修订版.ttf&quot;);
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: &quot;happyFonts&quot;;
+}</code></pre>
+<p>引入后，打包到线上环境测试发现，即使字体包用<code>font-spider</code>筛选一遍，可真机上打开或多或少会出现字体加载过慢，导致文字区域空白一段时间再出现，或者先出现系统默认字体，之后再突然出现字体包字体。</p>
+<p>这种体验…很难受啊!</p>
+<p>所以我们急需一个能够监听第三方字体包是否加载完成的方法。</p>
+<p>抓耳挠腮，捶胸顿足之下，终于找到一个神器 <u><a href="https://github.com/bramstein/fontfaceobserver" target="_blank" rel="noopener">Font Face Observer</a></u>!!!</p>
+<p>如同描述的一般，它提供两个回调函数，字体加载成功或失败，页面可以在其回调内决定是否出现。</p>
+<pre><code class="js">import Font from &quot;fontfaceobserver&quot;;
+
+export default {
+  mounted() {
+    const font = new Font(&quot;happyFonts&quot;);
+    font.load().then(
+      () =&gt; {
+        console.log(&quot;字体加载完成&quot;);
+        this.$router.replace({ name: &quot;start&quot; });
+      },
+      () =&gt; {
+        console.log(&quot;字体加载失败&quot;);
+        this.$router.replace({ name: &quot;start&quot; });
+      }
+    );
+  }
+};</code></pre>
+<h2 id="BGM"><a href="#BGM" class="headerlink" title="BGM!"></a>BGM!</h2><p>大部分活动 h5 少不了会用上 bgm，建议 bgm 使用某一段或几段可以循环播放的音频，越短越好(占用加载时间和服务器资源)。</p>
+<p>“音频文件太长了，我只需要其中一小段怎么办”，我给出的方法是：<code>找一个会剪音乐的漂亮妹子，嘿嘿嘿(咽口水)</code>。</p>
+<p>或者<u><a href="https://www.zhihu.com/question/19907593" target="_blank" rel="noopener">点击此处</a></u></p>
+<p>好了，由于 h5 中的 bgm 占用了和字体包差不多的大小，我们也需要一个能够判断音频文件加载完成的事件。</p>
+<p>下面是 audio 相关的事件</p>
+<pre><code class="html">&lt;body&gt;
+  &lt;audio id=&quot;music&quot; src=&quot;&quot; loop=&quot;loop&quot;&gt;&lt;/audio&gt;
+  &lt;script&gt;
+    /**
+     * @func play 播放 可判断音频是否正在播放
+     * @func pause 暂停 可判断音频是否暂停
+     * @funcs  一下事件是音频在加载过程中依次触发的
+     * loadstart =&gt; durationchange =&gt; loadeddata =&gt; progress =&gt; canplay =&gt; canplaythrough
+     */
+    const audio = document.getElementById(&quot;music&quot;);
+    audio.oncanplay = () =&gt; {
+      console.log(&quot;音乐可以播放，做你想做的吧&quot;);
+    };
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>正在我志得意满打开测试链接时，发现无论如何点击播放都没有音乐声音！😱</p>
+<p>着急忙慌打开微信开发者工具调试后发现，我的音乐地址找不到资源，这是为何？分明就放在<code>src/assets/music</code>中啊，找不到资源…难不成！</p>
+<p>心头一点灵光乍现，当即打开<u><a href="https://vue-loader.vuejs.org/zh/options.html#transformasseturls" target="_blank" rel="noopener">vue-cli</a></u>，急急望去</p>
+<pre><code class="js">{
+  video: [&#39;src&#39;, &#39;poster&#39;],
+  source: &#39;src&#39;,
+  img: &#39;src&#39;,
+  image: [&#39;xlink:href&#39;, &#39;href&#39;],
+  use: [&#39;xlink:href&#39;, &#39;href&#39;]
+}</code></pre>
+<p>果然不出所料，vue-cli 的 loader 配置默认没有 audio 的配置！至此，情绪再次恢复平静，打开<code>vue.config.js</code>，缓缓书写几行代码</p>
+<pre><code class="js">module.exports = {
+  assetsDir: &quot;static&quot;,
+  chainWebpack: config =&gt; {
+    config.module
+      .rule(&quot;vue&quot;)
+      .use(&quot;vue-loader&quot;)
+      .loader(&quot;vue-loader&quot;)
+      .tap(options =&gt; {
+        options.transformAssetUrls = {
+          audio: &quot;src&quot;
+        };
+        return options;
+      });
+  }
+};</code></pre>
+<p>重新打包，点开<code>dist</code>文件夹，<code>static/media/xxx.mp3</code>已安稳的进入其中，吾心甚慰。</p>
+<h2 id="html2canvas"><a href="#html2canvas" class="headerlink" title="html2canvas"></a>html2canvas</h2><p>h5 的最后推广，同样少不了的一个功能就是，生成图片。</p>
+<p>对于生成图片，这里有两个模块可供使用<code>html2canvas</code>和<code>dom-to-image</code>，两个模块的使用方法都很简单，这里使用的是 html2canvas.</p>
+<p>随之而来的就是老生常谈的两个问题，一是图片跨域问题，二是生成图片清晰度优化。</p>
+<ul>
+<li><p>图片跨域</p>
+<p>启用 html2canvas 中的<code>{ useCORS: true }</code>配置，即可渲染 cdn 的图片和本地图片。</p>
+<p>若有其他来源图片(比如微信用户头像)，要么走接口转化下图片链接，要么将图片转成 base64 格式再行渲染即可。</p>
+</li>
+<li><p>清晰度优化</p>
+<ol>
+<li>将选区 dom 的布局单位改为 px 像素</li>
+<li>使用<code>{ scale: 2 }</code>将 canvas 的宽高扩大为原本 dom 的两倍，或设置为 devicePixelRatio 倍，最后将生成图片的大小设置为原先 dom 大小</li>
+<li>可以使用 css 绘制的样式，尽量不要使用图片代替</li>
+</ol>
+<pre><code class="vue">&lt;script&gt;
+import html2canvas from &quot;html2canvas&quot;;
+
+export default {
+  // 获取可视区域的宽高
+  getClientSize() {
+    const app = this.$refs.app;
+    return [app.clientWidth, app.clientHeight];
+  },
+  // 生成图片
+  createPhoto() {
+    const content = document.getElementById(&quot;container&quot;);
+    const canvas = document.createElement(&quot;canvas&quot;);
+    const [width, height] = this.getClientSize();
+    const scale = 2;
+    canvas.width = width;
+    canvas.height = height;
+    canvas.getContext(&quot;2d&quot;).scale(scale, scale);
+
+    const opts = {
+      logging: true, //  打印生成图片的日志
+      canvas: canvas, //  导入生成的canvas
+      width: width,
+      height: height,
+      scale: scale,
+      useCORS: true, //  允许图片跨域
+      timeout: 1000 //  设置图片超时时间
+    };
+    html2canvas(content, opts).then(c =&gt; {
+      this.photo = c.toDataURL(&quot;image/png&quot;, 1);
+    });
+  }
+};
+&lt;/script&gt;</code></pre>
+<p>完美~</p>
+</li>
+</ul>
+<h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>图片压缩有我们熟知的<u><a href="https://tinypng.com/" target="_blank" rel="noopener">熊猫压缩</a></u>，这个在线压缩网站可以极大的减少图片的大小同时不会出现失真，但对于工程师来说，拖入本地图片压缩的做法未免略显蠢笨。</p>
+<p>于是，有了这么一个图片压缩的工具<code>imageMin</code>，及其 webpack 的扩展<u><a href="https://github.com/Klathmon/imagemin-webpack-plugin" target="_blank" rel="noopener">imagemin-webpack-plugin</a></u>。</p>
+<pre><code class="js">const ImageminPlugin = require(&#39;imagemin-webpack-plugin&#39;).default
+const IS_PROD  = [&#39;production&#39;, &#39;prod&#39;].includes(process.env.NODE_ENV)  //  判断当前环境
+
+module.exports = {
+  configureWebpack: {
+    plugins: {
+      new ImageminPlugin({
+        disable: !IS_PROD,
+        pngquant: {
+          quality: &#39;80-100&#39;,  //  控制图片质量区间
+          progressive: true   //  图片加载时的显示方式是否是渐变出现
+        }
+      })
+    }
+  }
+}</code></pre>
+<p>亲测实用，<code>image</code>文件夹原本 5mb(已被 tinypng 压缩)，打包后只有 3.5mb。</p>
+
+      </div>
+
+      <div class="article-footer">
+        
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(https://i.loli.net/2020/04/06/2pRIocJ8ibeyAMQ.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/09/19/agreeable/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              惬意
+            
+          </p>
+        </article>
+      </div>
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(https://i.loli.net/2020/04/05/yHEis5CFOdmDhBY.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/08/07/GFW/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              一分钟速成科学上网教学
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+  
+
+  
+  
+
+
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2022 <a href="/" target="_blank">elegantYU</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=d&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <!-- <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p> -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="hiddenBox" style="display: none;">
+      <span id="busuanzi_value_site_uv"></span>位道友拜访过
+      <span id="busuanzi_value_site_pv"></span>次流连忘返
+      <span id="busuanzi_value_page_pv"></span>次留名
+      <span id="busuanzi_container_site_uv"></span>
+      <span id="busuanzi_container_site_pv"></span>
+      <span id="busuanzi_container_page_pv"></span>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  
+  
+<!-- valine 评论 start -->
+<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: "#valine_thread",
+    appId: "5xXAw8mGSxsiAVvItnDTlc1Q-gzGzoHsz",
+    appKey: "izanFwv9WmbM99bQQKMDt6jj",
+    avatar: "elegantYu",
+    placeholder: "我卢本伟！没有开挂！",
+    notify: true,
+    visitor: true,
+    pageSize: 10,
+  });
+</script>
+<!-- valine 评论 end -->
+
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="/lib/APlayer.min.css">
+  <script src="/lib/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+<script src="/lib/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+<script src="/lib/waterfall.min.js"></script>
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  <script src="/lib/zoom.min.js"></script>
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  
+    ga('create', 'UA-165699409-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  
+
+
+
+<script src="/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+  
+  <!-- 尾部用户自定义相关内容 -->
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

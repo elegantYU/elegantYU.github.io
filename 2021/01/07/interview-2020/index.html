@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <meta name="description" content="elegantYu的快乐小屋~">
+  
+
+  
+    <meta name="keywords" content="技术,前端,学习,交流,javascript,nodejs,vue,插件,杂学,扯淡，教程，工具">
+  
+
+  
+    <meta name="author" content="elegantYU">
+  
+
+  
+
+  
+
+  <title>2020前端面试题集-vue向 | elegantYu</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css">
+<link rel="alternate" href="/atom.xml" title="elegantYu" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          elegantYu
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">home</a></li>
+        
+          <li class="navbar-list-item"><a href="/categories">categories</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">about</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<!-- header container -->
+<header class="header-container post">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-image" style="background-image: url(https://i.loli.net/2021/01/08/MgWBmA7r5OYoy2i.jpg)"></div>
+      <div class="post-text">
+        <div class="type-wrap">
+          
+        </div>
+        <h1 class="title-wrap">2020前端面试题集-vue向</h1>
+        <h2 class="title-sub-wrap">
+          <strong>elegantYU</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" target="_blank" rel="noopener" class="article-date">
+    <time datetime="2021-01-07T17:19:44.000Z" itemprop="datePublished">2021-01-07</time>
+  </a>
+
+        </h2>
+      </div>
+    </div>
+  
+
+  
+  
+
+  </header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <p>2020下半年并不顺利，产品被其他平台诉讼下架，于是公司解散了无收益且吃钱的技术团队。突发事件显然超出了我的预期计划，在边玩边玩边玩边看题了大半月后，开始踏上面试之路。</p>
+<p>这里集合一下本人遇到的全部面试题，题目顺序按照面试流程和出现频率降序，若是有点名气的厂会加名称。</p>
+<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>这环节的面试官一般分为两种情况：</p>
+<ul>
+<li><p>已看过简历了解情况后，通过自我介绍看个人总结能力和突出亮点</p>
+</li>
+<li><p>未看简历，想直接获取个人技术栈等情况，选择问题</p>
+</li>
+</ul>
+<p>此时介绍并不建议将简历内容完整复述一遍，没有营养啊。尽量控制介绍时间在3分钟以内，我将这环节提炼出以下几点：</p>
+<ul>
+<li><p>个人技术栈</p>
+</li>
+<li><p>杰出项目或处理过的最有成就感的问题(挑一二稍微描述下，后续面试官有兴趣会追问)</p>
+</li>
+<li><p>工作中的软实力(促进团队协作、推动团队发展、带人经验、项目架构经验等)</p>
+</li>
+<li><p>日常如何提升自我(可以是技术方面，可以是其他方面，主要看个人的学习能动性和学习方式)</p>
+</li>
+<li><p>拿得出手的开源项目</p>
+</li>
+</ul>
+<p>以上挑3、4点介绍基本就ok了，尽量简洁，抓重点</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ol>
+<li><p><a href="https://yuchengkai.cn/docs/frontend/browser.html#event-loop" target="_blank" rel="noopener">js的event loop</a></p>
+<blockquote>
+<p>无论直接问或者拐弯问，总之基本必问 —— 字节、哈喽</p>
+</blockquote>
+<ul>
+<li>宏任务、微任务有哪些</li>
+<li>宏任务如何处理(每次执行几个)</li>
+</ul>
+</li>
+<li><p><a href="https://juejin.cn/post/6844903767226351623" target="_blank" rel="noopener">如何处理跨域问题</a></p>
+<blockquote>
+<p>也是必问 —— 字节、美团</p>
+</blockquote>
+<ul>
+<li>jsonp原理、优劣<ul>
+<li>img标签src能否使用</li>
+</ul>
+</li>
+<li>cors如何设置</li>
+</ul>
+</li>
+<li><p><a href="https://segmentfault.com/a/1190000015042902" target="_blank" rel="noopener">深浅拷贝</a></p>
+<blockquote>
+<p>建议做到手写 —— 携程</p>
+</blockquote>
+<ul>
+<li>浅拷贝如何实现(es5, es6)</li>
+<li>深拷贝如何处理循环引用</li>
+</ul>
+</li>
+<li><p>throttle &amp;&amp; debounce</p>
+<blockquote>
+<p>建议手写</p>
+</blockquote>
+<ul>
+<li>原理，应用场景，手写</li>
+</ul>
+</li>
+<li><p><a href="https://lucifer.ren/fe-interview/#/?id=javascript-%f0%9f%97%92%ef%b8%8f" target="_blank" rel="noopener">call\apply\bind</a></p>
+<ul>
+<li>手动实现，区别</li>
+</ul>
+</li>
+<li><p>css水平垂直居中布局</p>
+<blockquote>
+<p>也属于基本必考点 —— 字节、美团</p>
+</blockquote>
+</li>
+<li><p><a href="https://juejin.cn/post/6844903809206976520?utm_source=gold_browser_extension%3Futm_source%3Dgold_browser_extension" target="_blank" rel="noopener">new 的实现原理</a></p>
+</li>
+<li><p>this 的指向</p>
+</li>
+<li><p><a href="https://es6.ruanyifeng.com/#docs/let" target="_blank" rel="noopener">let、const、var</a></p>
+<ul>
+<li>什么是变量提升</li>
+</ul>
+</li>
+<li><p><a href="https://juejin.cn/post/6844903767654023182" target="_blank" rel="noopener">Promise</a></p>
+<blockquote>
+<p>建议根据A+原理手写</p>
+</blockquote>
+<ul>
+<li>原理实现</li>
+<li>与async区别</li>
+<li>外部try catch能否捕获异常</li>
+<li>扩展方法的意义(all\race\finally\any)</li>
+</ul>
+</li>
+<li><p>Set\Map</p>
+<ul>
+<li>数据结构</li>
+<li>应用场景</li>
+</ul>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/47407398" target="_blank" rel="noopener">浏览器渲染问题</a></p>
+<ul>
+<li>渲染顺序</li>
+<li><a href="https://zh.javascript.info/script-async-defer" target="_blank" rel="noopener">defer\async 的区别，对应的加载时机</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/48521680" target="_blank" rel="noopener">prefetch\preload 区别，原理</a></li>
+</ul>
+</li>
+<li><p><a href="https://chinese.freecodecamp.org/news/javascript-implicit-type-conversion/" target="_blank" rel="noopener">数据隐式转换</a></p>
+<ul>
+<li>隐式转换如何触发(== + !…)</li>
+<li>类型转换的规则</li>
+</ul>
+</li>
+<li><p>instanceof 原理</p>
+</li>
+<li><p>重绘重排</p>
+</li>
+</ol>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><ol>
+<li><p><a href="https://www.php.cn/js-tutorial-457006.html" target="_blank" rel="noopener">vue响应式原理</a></p>
+<blockquote>
+<p>必问的，建议多看源码。有些面试官会将其与双向绑定混淆，可以顺带一起说 —— 字节、美团、哈喽</p>
+</blockquote>
+<ul>
+<li>直接对data中数组的索引修改，是否会变化</li>
+<li>增删对象属性，是否会变化</li>
+<li>对数组类型的处理</li>
+<li>为什么不对数组做依赖收集</li>
+</ul>
+</li>
+<li><p>vue的key有什么作用</p>
+<ul>
+<li>不加key有什么影响</li>
+<li>就地复用比重新创建性能高，如何选择</li>
+</ul>
+</li>
+<li><p>vue diff算法如何处理</p>
+</li>
+<li><p>组件通信方式</p>
+<ul>
+<li>依赖注入的实现</li>
+</ul>
+</li>
+<li><p>nextTick 原理</p>
+<ul>
+<li>如何实现在dom更新后执行(MutationObserver)</li>
+<li>在事件流中的执行位置</li>
+</ul>
+</li>
+<li><p>computed与watch</p>
+<ul>
+<li>区别、取舍</li>
+<li>computed的缓存机制</li>
+<li>computed能否被赋值</li>
+</ul>
+</li>
+<li><p>虚拟dom</p>
+<ul>
+<li>原理，与原生dom区别</li>
+</ul>
+</li>
+<li><p>keep-alive</p>
+<ul>
+<li>生命周期</li>
+<li>原理</li>
+</ul>
+</li>
+<li><p>父子组件渲染顺序</p>
+<ul>
+<li>生命周期执行顺序</li>
+<li>通过props传递的数据，在父组件哪个阶段请求</li>
+</ul>
+</li>
+<li><p>vue-router</p>
+<ul>
+<li>常用的mode，如何实现</li>
+<li>浏览器回退按钮的事件</li>
+<li>hash和history的优缺点，如何选择</li>
+<li>如何修改hash</li>
+</ul>
+</li>
+<li><p>vuex</p>
+<ul>
+<li>mutation与action区别</li>
+</ul>
+</li>
+<li><p>react</p>
+<blockquote>
+<p>没看这方面的题，所以没让面试官问太多</p>
+</blockquote>
+<ul>
+<li>react hooks优缺点</li>
+<li>redux 与其他状态管理框架的比较</li>
+</ul>
+</li>
+</ol>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><blockquote>
+<p>字节对网络方面问的较多</p>
+</blockquote>
+<ol>
+<li><p>导航栏输入内容点击回车后发生的事</p>
+</li>
+<li><p>请求响应头有哪些内容(字段)</p>
+</li>
+<li><p>缓存机制</p>
+</li>
+<li><p>restful 了解</p>
+<blockquote>
+<p>建议从阮一峰的restful架构开始看，api代表表现层状态转换的方式</p>
+</blockquote>
+<ul>
+<li>如何设计restful规范的api</li>
+<li>请求方法如何使用</li>
+<li>options方法的用途</li>
+</ul>
+</li>
+<li><p>前后端鉴权的方式有哪些</p>
+<ul>
+<li>如何理解jwt</li>
+<li>cookie鉴权的优劣</li>
+<li>页面对不同角色的处理</li>
+</ul>
+</li>
+<li><p>ssr服务端渲染</p>
+<ul>
+<li>ssr与传统的jsp、php，同样是服务端出页面，有什么区别</li>
+<li>生命周期</li>
+<li>如何获取数据</li>
+<li>应用场景</li>
+</ul>
+</li>
+</ol>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li><p>页面性能优化</p>
+</li>
+<li><p>webpack优化</p>
+</li>
+<li><p>babel 相关</p>
+<ul>
+<li>用途、原理</li>
+<li>Object.assign()被babel处理后的语法</li>
+<li>Promise被babel处理后的语法</li>
+</ul>
+</li>
+<li><p>webpack相关</p>
+<ul>
+<li>由哪些模块构成</li>
+<li>常用的webpack插件有哪些</li>
+<li>loader的作用、原理</li>
+<li>css-loader和style-loader区别</li>
+</ul>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/66331977" target="_blank" rel="noopener">图片格式的选择</a></p>
+<ul>
+<li>webp兼容性如何解决</li>
+</ul>
+</li>
+<li><p>express与koa的区别</p>
+<ul>
+<li>中间件如何调用</li>
+<li>app.use 执行顺序</li>
+<li>如何选择</li>
+</ul>
+</li>
+<li><p>小程序</p>
+<ul>
+<li>Taro 原理，遇到的坑点</li>
+<li>各平台小程序的区别</li>
+<li>小程序优化方案</li>
+</ul>
+</li>
+<li><p>移动端页面</p>
+<ul>
+<li>如何解决1px问题</li>
+<li>rem布局与vw布局</li>
+<li>click 300ms延迟问题</li>
+<li>flex布局</li>
+</ul>
+</li>
+<li><p>html2canvas</p>
+<ul>
+<li>如何解决生成复杂图片会阻塞主线程问题</li>
+</ul>
+</li>
+<li><p>对于用户输入内容如何过滤</p>
+</li>
+<li><p>如何设计一个完全解耦的组件</p>
+</li>
+<li><p>对一个项目的前端架构思路</p>
+</li>
+<li><p>项目中最困难的点，如何克服</p>
+</li>
+<li><p>最近学习的内容是什么</p>
+</li>
+<li><p>react\vue\express\js等等的最近动向，更新内容</p>
+</li>
+<li><p>面试官会根据个人做过的项目询问要点，记得提前整理出项目的细节</p>
+</li>
+</ol>
+<h2 id="笔试-包括算法"><a href="#笔试-包括算法" class="headerlink" title="笔试(包括算法)"></a><a href="../interview-write-2020">笔试(包括算法)</a></h2><h2 id="薪资"><a href="#薪资" class="headerlink" title="薪资"></a>薪资</h2><p>说实话，并不会谈，都是根据目标薪资莽着要(很少计算)，导致劳资错过了几家offer</p>
+
+      </div>
+
+      <div class="article-footer">
+        
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item">
+        <article>
+          
+          <a class="card-link article-nav-link" href="/2021/07/12/algorithm-sumthreenum/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              算法-三数之和
+            
+          </p>
+        </article>
+      </div>
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(https://i.loli.net/2020/12/31/XzStjfqlsrp8NQD.png)"></div>
+          
+          <a class="card-link article-nav-link" href="/2020/12/31/CyberPunk2077/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              CyberPunk2077
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+  
+
+  
+  
+
+
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2022 <a href="/" target="_blank">elegantYU</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=d&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <!-- <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p> -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="hiddenBox" style="display: none;">
+      <span id="busuanzi_value_site_uv"></span>位道友拜访过
+      <span id="busuanzi_value_site_pv"></span>次流连忘返
+      <span id="busuanzi_value_page_pv"></span>次留名
+      <span id="busuanzi_container_site_uv"></span>
+      <span id="busuanzi_container_site_pv"></span>
+      <span id="busuanzi_container_page_pv"></span>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  
+  
+<!-- valine 评论 start -->
+<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: "#valine_thread",
+    appId: "5xXAw8mGSxsiAVvItnDTlc1Q-gzGzoHsz",
+    appKey: "izanFwv9WmbM99bQQKMDt6jj",
+    avatar: "elegantYu",
+    placeholder: "我卢本伟！没有开挂！",
+    notify: true,
+    visitor: true,
+    pageSize: 10,
+  });
+</script>
+<!-- valine 评论 end -->
+
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="/lib/APlayer.min.css">
+  <script src="/lib/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+<script src="/lib/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+<script src="/lib/waterfall.min.js"></script>
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  <script src="/lib/zoom.min.js"></script>
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  
+    ga('create', 'UA-165699409-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  
+
+
+
+<script src="/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+  
+  <!-- 尾部用户自定义相关内容 -->
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

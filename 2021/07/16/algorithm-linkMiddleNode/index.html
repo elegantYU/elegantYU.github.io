@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <meta name="description" content="elegantYu的快乐小屋~">
+  
+
+  
+    <meta name="keywords" content="技术,前端,学习,交流,javascript,nodejs,vue,插件,杂学,扯淡，教程，工具">
+  
+
+  
+    <meta name="author" content="elegantYU">
+  
+
+  
+
+  
+
+  <title>算法-获取链表中间节点 | elegantYu</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css">
+<link rel="alternate" href="/atom.xml" title="elegantYu" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          elegantYu
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">home</a></li>
+        
+          <li class="navbar-list-item"><a href="/categories">categories</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">about</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<!-- header container -->
+<header class="header-container post">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-image" style="background-image: url(https://i.loli.net/2020/06/14/2Ndt1jLzMiE3Bxy.jpg)"></div>
+      <div class="post-text">
+        <div class="type-wrap">
+          
+        </div>
+        <h1 class="title-wrap">算法-获取链表中间节点</h1>
+        <h2 class="title-sub-wrap">
+          <strong>elegantYU</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" target="_blank" rel="noopener" class="article-date">
+    <time datetime="2021-07-16T16:38:45.000Z" itemprop="datePublished">2021-07-16</time>
+  </a>
+
+        </h2>
+      </div>
+    </div>
+  
+
+  
+  
+
+  </header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <p>继续链表 双指针</p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定链表，要求返回链表中间节点，若没有中间节点则返回 null</p>
+<pre><code class="js">链表：[1,2,3,4,5,6,7]
+返回：4</code></pre>
+<pre><code class="js">链表：[1,2,3,4,5,6]
+返回：null</code></pre>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>根据上一章，了解到快慢指针的思路来看这一题</p>
+<ul>
+<li>如果链表长度是奇数，则有中间节点，反之则无</li>
+<li>快慢指针都从头节点开始遍历，每次遍历，慢指针走一位 a.next，快指针多走一位 b.next.next。</li>
+<li>先从慢指针来看，每次走一步，走完 link 就是 n 步；再看快指针，每次距离都比上次 + 1，走完全程是 n / 2</li>
+<li>而 b.next 为 null 是奇数，有中间节点；b.next.next 为 null 是偶数，无中间节点</li>
+</ul>
+<pre><code class="js">function middleNode(list) {
+    let slow = list;
+    let fast = list;
+
+    while (fast &amp;&amp; fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    return slow;
+}</code></pre>
+<p>时间 O(n)</p>
+<p>空间 O(1)</p>
+
+      </div>
+
+      <div class="article-footer">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">#算法</a></li></ul>
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item">
+        <article>
+          
+          <a class="card-link article-nav-link" href="/2021/07/19/algorithm-getMinEqualItem/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              算法-获取有序数组中最小的相同元素
+            
+          </p>
+        </article>
+      </div>
+    
+    
+      <div id="article-nav-older" class="card-item">
+        <article>
+          
+          <a class="card-link article-nav-link" href="/2021/07/16/algorithm-cycleLink/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              算法-唤醒链表
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+  
+
+  
+  
+
+
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2022 <a href="/" target="_blank">elegantYU</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=d&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <!-- <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p> -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="hiddenBox" style="display: none;">
+      <span id="busuanzi_value_site_uv"></span>位道友拜访过
+      <span id="busuanzi_value_site_pv"></span>次流连忘返
+      <span id="busuanzi_value_page_pv"></span>次留名
+      <span id="busuanzi_container_site_uv"></span>
+      <span id="busuanzi_container_site_pv"></span>
+      <span id="busuanzi_container_page_pv"></span>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  
+  
+<!-- valine 评论 start -->
+<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: "#valine_thread",
+    appId: "5xXAw8mGSxsiAVvItnDTlc1Q-gzGzoHsz",
+    appKey: "izanFwv9WmbM99bQQKMDt6jj",
+    avatar: "elegantYu",
+    placeholder: "我卢本伟！没有开挂！",
+    notify: true,
+    visitor: true,
+    pageSize: 10,
+  });
+</script>
+<!-- valine 评论 end -->
+
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="/lib/APlayer.min.css">
+  <script src="/lib/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+<script src="/lib/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+<script src="/lib/waterfall.min.js"></script>
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  <script src="/lib/zoom.min.js"></script>
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  
+    ga('create', 'UA-165699409-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  
+
+
+
+<script src="/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+  
+  <!-- 尾部用户自定义相关内容 -->
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

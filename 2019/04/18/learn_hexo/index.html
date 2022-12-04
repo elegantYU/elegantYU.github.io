@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <meta name="description" content="elegantYu的快乐小屋~">
+  
+
+  
+    <meta name="keywords" content="技术,前端,学习,交流,javascript,nodejs,vue,插件,杂学,扯淡，教程，工具">
+  
+
+  
+    <meta name="author" content="elegantYU">
+  
+
+  
+
+  
+
+  <title>一分钟速成hexo搭建博客教学 | elegantYu</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css">
+<link rel="alternate" href="/atom.xml" title="elegantYu" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          elegantYu
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">home</a></li>
+        
+          <li class="navbar-list-item"><a href="/categories">categories</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">about</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<!-- header container -->
+<header class="header-container post">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-image" style="background-image: url(https://i.loli.net/2020/04/05/x3GcpNR4Vqr9HTP.jpg)"></div>
+      <div class="post-text">
+        <div class="type-wrap">
+          <a class="article-category-link" href="/categories/%E4%B8%80%E5%88%86%E9%92%9F%E6%95%99%E7%A8%8B/">一分钟教程</a>
+        </div>
+        <h1 class="title-wrap">一分钟速成hexo搭建博客教学</h1>
+        <h2 class="title-sub-wrap">
+          <strong>elegantYU</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" target="_blank" rel="noopener" class="article-date">
+    <time datetime="2019-04-18T22:12:46.000Z" itemprop="datePublished">2019-04-18</time>
+  </a>
+
+        </h2>
+      </div>
+    </div>
+  
+
+  
+  
+
+  </header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <blockquote>
+<p>此篇博客乃在下历时月许，拖沓至今才准备出的 hexo+github 搭建博客教学。<br>从头至尾皆是本人的亲生体会，希望对大家有所借鉴和帮助</p>
+</blockquote>
+<a id="more"></a>
+
+<p><a href="https://github.com/996icu/996.ICU/blob/master/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/license-Anti%20996-blue.svg" alt="LICENSE"></a></p>
+<div class="aplayer" data-name='to the seaside...' data-artist='silky soap' data-url='http://m10.music.126.net/20200405204825/5e96a995cd8b00ca7280bff3714f945a/ymusic/e68a/99ca/72e6/3c2ea48d52fa82faf8380fdff28772e9.mp3' data-lrc data-cover='https://i.loli.net/2020/04/05/5Sv8WXw2RKpDIsT.jpg' ></div>
+
+
+<h2 id="博客环境"><a href="#博客环境" class="headerlink" title="博客环境"></a>博客环境</h2><ol>
+<li><p><u><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a></u>你要有吧，版本当然是越新越好，越稳定越好;</p>
+</li>
+<li><p><u><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></u> 你要有吧，不用多说</p>
+</li>
+<li><p>安装 Hexo-cli，命令行全局下载</p>
+<blockquote>
+<p>npm install -g hexo-cli</p>
+</blockquote>
+</li>
+<li><p>找一个你喜欢的位置，初始化 hexo 文件作为你的博客本地仓库</p>
+<pre><code class="bash">$ hexo init &lt;你的仓库名&gt;
+$ cd &lt;你的仓库名&gt;
+$ npm install</code></pre>
+</li>
+<li><p>本地启动 hexo 博客</p>
+<pre><code class="bash">$ hexo s</code></pre>
+</li>
+<li><p>本地博客在<code>http://localhost:4000</code>启动了！</p>
+</li>
+</ol>
+<h2 id="github-仓库"><a href="#github-仓库" class="headerlink" title="github 仓库"></a>github 仓库</h2><ol>
+<li><p>在 github 上创建名为 <code>&lt;你的Github帐号&gt;.github.io</code> 的仓库</p>
+</li>
+<li><p>使用命令，将本地 hexo 博客的仓库推送到 github 仓库(加入的命令越多，构建越慢)</p>
+<ul>
+<li>安装 <code>hexo-deployer-git</code> 插件</li>
+</ul>
+<pre><code class="bash">$ npm install hexo-deployer-git</code></pre>
+<ul>
+<li>修改本地仓库根目录下的_config.yml 文件中的</li>
+</ul>
+<pre><code class="yml"># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:&lt;你的git账户名&gt;/&lt;你的git账户名&gt;.github.io
+  branch: master</code></pre>
+<ul>
+<li>使用 hexo 的推送命令</li>
+</ul>
+<pre><code class="bash">$ hexo g
+$ hexo d</code></pre>
+</li>
+<li><p>上个厕所，喝杯茶，等一会~在浏览器访问 <code>https://&lt;你的git账户名&gt;.github.io</code> 即可看到你的博客</p>
+</li>
+</ol>
+<h2 id="添加主题"><a href="#添加主题" class="headerlink" title="添加主题"></a>添加主题</h2><ol>
+<li><p>hexo 的默认主题是 landscape，虽然是很丑，但是确实不好看，这里列举几个我觉得 UI 或功能性好的主题</p>
+<ul>
+<li><u><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a></u> 大佬都在推</li>
+<li><u><a href="https://github.com/0x2E/Material-T" target="_blank" rel="noopener">Material-T</a></u> 我在用的</li>
+<li><u><a href="https://github.com/EYHN/hexo-theme-one" target="_blank" rel="noopener">One</a></u> 二次元大佬</li>
+<li><u><a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank" rel="noopener">Archer</a></u> 功能全面</li>
+<li><u><a href="https://github.com/Longlongyu/hexo-theme-Cxo" target="_blank" rel="noopener">Cxo</a></u> 一开始的选择</li>
+</ul>
+<p>更多主题<u><a href="https://github.com/search?q=hexo-theme" target="_blank" rel="noopener">点这里</a></u>或<u><a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">这里</a></u></p>
+</li>
+<li><p>下载主题</p>
+<ul>
+<li>将下载的主题文件夹，粘贴到根目录的 thems 目录下(有些是直接下载到该目录下)</li>
+<li>修改_config.yml 的 theme 配置<pre><code class="yml"># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: &lt;你的主题名&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li><p>主题优化<br>一般主题的文档中都会有相应的主题自定义优化空间，不然就自己添加配置</p>
+</li>
+</ol>
+<h2 id="自动构建"><a href="#自动构建" class="headerlink" title="自动构建"></a>自动构建</h2><ol>
+<li><p>什么是自动构建？</p>
+<p>指将源码转换为可以实际运行的代码，配置各种资源(css、js、img 等)</p>
+</li>
+<li><p>hexo 为什么要自动构建？</p>
+<blockquote>
+<p>大家可以看下自己 github 的博客仓库，细心的你会惊讶的发现，怎么目录和本地仓库的不一样？<br>这是因为 hexo 在 deploy 的时候会把生成的代码上传到 git 仓库里，而开发环境的源码都不会上传，这样的话对于有多个终端的用户来说就很蛋疼。总不能说换个电脑就要从头来一遍博客的搭建吧…<br>于是，我们就需要在 git 仓库里也要上传一份源码，便于以后可以在不同的终端环境下也能方便的编辑博客。</p>
+</blockquote>
+<p>这里我使用的构建工具是<u><a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis-CI</a></u></p>
+</li>
+<li><p>travis-ci 配置</p>
+<ul>
+<li>Travis-CI 是开源持续集成构建项目，用来构建托管在 github 上的代码，提供了多种语言的支持。</li>
+</ul>
+<p>当我们每次进行<code>git push</code>等动作时，Travis CI 会自动检测提交，然后根据<code>.travis.yml</code>配置文件自动生成一份线上代码。</p>
+<ul>
+<li><p>使用你的 git 账户登录<u><a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis-CI</a></u>，进入<u><a href="https://travis-ci.org/account/repositories" target="_blank" rel="noopener">travis-ci.org/account/repositories</a></u>页面，如下图</p>
+<p><img src="https://i.loli.net/2019/04/21/5cbc1252a36f5.png" alt="travis配置" title="travis ci 个人仓库"></p>
+</li>
+<li><p>点击<code>&lt;你的git名&gt;.github.io</code>仓库后的 settings，进入设置页</p>
+<p><img src="https://i.loli.net/2019/04/21/5cbc1252a303e.png" alt="travis配置" title="travis ci 仓库配置"></p>
+</li>
+<li><p>在这里需要配置你的环境变量(Environment Variables)，起一个你觉得好听的名字(我这里叫<code>ACCESS_TOKEN</code>)，然后去 github 获取 token</p>
+<p><img src="https://i.loli.net/2019/04/21/5cbc1462546f3.png" alt="travis配置" title="环境变量"></p>
+</li>
+<li><p>进入<a href="https://github.com/settings/developers" target="_blank" rel="noopener">github.com/settings/developers</a>页面，点击<code>Personal access tokens</code>，选择生成一个新 token(Generate new token)</p>
+</li>
+<li><p>选择 repo 所有权限</p>
+<p><img src="https://i.loli.net/2019/04/21/5cbc1252ba0e6.png" alt="Generate new token" title="生成access_token"></p>
+</li>
+<li><p>将生成的 token 复制，粘贴到 travis ci 页面的 value 里(此 token 以后在 github 中不会再次显示，若是忘记可再次生成一个)，添加进去</p>
+</li>
+<li><p>下面就是配置.travis.yml 文件</p>
+<ul>
+<li><p>在本地博客根目录下新建.travis.yml 文件</p>
+</li>
+<li><p>配置如下(简易版)</p>
+</li>
+</ul>
+<pre><code class="yml"># 指定语言环境
+language: node_js
+# 指定nodejs版本
+node_js: 10.15.3
+# 指定缓存模块，可加快编译速度(可选)
+cache:
+  directories:
+    - node_modules
+# 指定源码所在分支
+branches:
+  only:
+    - dev
+# 构建前执行的命令
+before_script:
+  - git config user.name &quot;&lt;你的git账户名&gt;&quot;
+  - git config user.email &quot;&lt;你的邮箱&gt;&quot;
+  # 这里的 ${ACCES_TOKEN} 对应之前在travis中设置的环境变量名
+  - sed -i&#39;&#39; &quot;s~https://github.com/&lt;你的git账户名&gt;/&lt;你的git账户名&gt;.github.io.git~https://${ACCESS_TOKEN}@github.com/&lt;你的git账户名&gt;/&lt;你的git账户名&gt;.github.io.git~&quot; _config.yml
+# 构建所执行命令
+script:
+  - hexo clean
+  - hexo g
+  - hexo d</code></pre>
+<ul>
+<li>修改根目录下的_config.yml</li>
+</ul>
+<pre><code class="yml">deploy:
+type: git
+# 使用https的url
+repo: https://github.com/&lt;你的git账户名&gt;/&lt;你的git账户名&gt;.github.io.git
+branch: master</code></pre>
+</li>
+<li><p>至此基本配置完毕，现在来提交下看是否开始自动构建</p>
+<ul>
+<li>在本地输入</li>
+</ul>
+<pre><code class="bash">$ git init
+$ git remote add origin &lt;git仓库的ssh链接&gt;
+$ git checkout -b dev
+$ git add</code></pre>
+<ul>
+<li>这时候可能会报错<code>You&#39;ve added another git repository inside your current repository.</code>, 这是因为主题文件和本地文件隶属两个不同的仓库，那么这时候就需要</li>
+</ul>
+<pre><code class="bash">$ git rm --cache &lt;报错主题的路径eg: theme/Material-T&gt;
+$ git add &lt;报错主题路径后加斜杠eg: theme/Material-T/&gt;</code></pre>
+<p>git add 的时候在路径后加斜杠，表示将这个文件夹加入，而不是将这个文件作为一个子模块</p>
+<ul>
+<li>再次</li>
+</ul>
+<pre><code class="bash">$ git add .
+$ git commit -m &#39;first commit&#39;
+$ git push</code></pre>
+</li>
+<li><p>喝杯水回来，再上 travis 上看下，出现该仓库的提交信息时。<br>恭喜你！只用了一分钟就配置好了一个完美的 github+hexo 博客！</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>重要功能已经具备，以后就是各种 hexo 插件的安装和配置，将会不断(慢)的更新。</p>
+</blockquote>
+<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><pre><code class="bash">$ hexo new post &#39;你的博客名称&#39; // 新建的md会在/source/_post/文件夹中
+$ hexo clean                  // 删除和清理之前生成的不需要的文件
+$ hexo g                      // 生成文件
+$ hexo d                      // 上传git
+$ hexo s                      // 本地预览
+// 配置完CI后 hexo g 和 hexo d无需使用
+$ git add .
+$ git commit
+$ git push</code></pre>
+<h2 id="hexo-扩展插件"><a href="#hexo-扩展插件" class="headerlink" title="hexo 扩展插件"></a>hexo 扩展插件</h2><h4 id="留言系统-gitment"><a href="#留言系统-gitment" class="headerlink" title="留言系统(gitment)"></a>留言系统(gitment)</h4><p>留言系统基本有 Valine,Livere,Gitment,Disqus 几种，这里选择的是 Gitment(大家都是有 gitment 帐号的人了)，所有的评论会已提交 issue 的形式保存在配置的仓库中。<br>下面，开始干货输出。</p>
+<ul>
+<li><p>注册 gitment,在<u><a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">New OAuth App</a></u>为博客创建一个密钥</p>
+<p><img src="http://ww1.sinaimg.cn/large/006665PZgy1g2e2uilm1cj30m00fr74y.jpg" alt="get info" title="生成密钥"></p>
+<pre><code class="yml">Application name: &quot;给你放置评论的仓库起名&quot;
+Homepage URL: &quot;可以直接填你的博客链接&quot;
+Application deccription: &quot;描述...&quot;
+Authorization callback URL: &quot;这个必须填博客地址&quot;
+# 注意 Homepage 和 callback 的url后都要加 / (这里也是一个坑)
+# 例 https://elegantyu.github.io/</code></pre>
+</li>
+<li><p>在你博客主题里找到或添加</p>
+<pre><code class="yml">gitment:
+enable: true
+mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+count: true # Show comments count in post meta area
+lazy: false # Comments lazy loading with a button
+cleanly: false # Hide &#39;Powered by ...&#39; on footer, and more
+language: # Force language, or auto switch by theme
+github_user: 你的github ID
+github_repo: 刚才填的仓库名(注意，只要名字，不要链接)
+client_id: 刚才申请的ClientID
+client_secret: 刚才申请的Client Secret
+proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
+redirect_protocol: # Protocol of redirect_uri with force_redirect_pro</code></pre>
+</li>
+<li><p>添加 gitment.ejs</p>
+<p>有的主题有，我的是自行创建的。</p>
+<pre><code class="html">&lt;!-- 放gitment的div --&gt;
+&lt;div id=&quot;gitment&quot;&gt;&lt;/div&gt;
+&lt;!-- 下面两个链接时助你越过一个大坑 --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js&quot;&gt;&lt;/script&gt;
+&lt;link
+  rel=&quot;stylesheet&quot;
+  href=&quot;https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css&quot;
+/&gt;
+&lt;!-- 初始化gitment实例 --&gt;
+&lt;script&gt;
+  let gitment = new Gitment({
+    // 关于id这一点要重点说下，这里又是一个大坑，在下面细说
+    id: &quot;&lt;%= page.subtitle %&gt;&quot;,
+    // 这里要注意映入yml里面的配置 要加上theme,不然默认引入最外层的config.yml
+    owner: &quot;&lt;%= theme.gitment.github_user %&gt;&quot;,
+    repo: &quot;&lt;%= theme.gitment.github_repo %&gt;&quot;,
+    oauth: {
+      client_id: &quot;&lt;%= theme.gitment.client_id %&gt;&quot;,
+      client_secret: &quot;&lt;%= theme.gitment.client_secret %&gt;&quot;
+    }
+  });
+  gitment.render(&quot;gitment&quot;);
+&lt;/script&gt;</code></pre>
+</li>
+<li><p>初始化 gitment</p>
+<p>啥都整差不多了，只需<code>add commit push</code>三步走。部署完成后，在文章页面找到你的留言区域，使用你的 Git 帐号登录授权，然后点击出现的蓝色按钮，初始化！</p>
+<p>初始化完成后还不留言测试下？</p>
+<p>‘comment’！这时候可以去你的博客留言仓库看下，会发现<code>issue</code>板块多了你的文章标题，并且其中还有你的测试信息。那么恭喜你，gitment 搭建完毕，剩下的就是根据你的喜好改变样式了。</p>
+</li>
+<li><p>gitment 的坑</p>
+<ul>
+<li><p>gitment 原始的 js、css 外链因为作者已经不维护，其内部有个请求的 url 已不存在，会导致 gitment 的主人初始化一直转圈圈。就用我这个吧，这是被大佬们 down 下来加了 cdn 的，稳。</p>
+</li>
+<li><p>初始化实例的 id。此 id 默认是获取文章的 title 作为 id，这就意味着你的文章标题不能够恣意洒脱的长短由心。吾辈中人岂能受这气？尤其是像我这样标题喜欢浪的。苦苦寻觅之下，终得一良方，便是在文章的 Front Matter(md 文章最上边的变量区域)里加入一个变量<code>subtitle</code>，并将其赋值给 id。</p>
+<pre><code class="markdown">---
+title: 一分钟速成hexo搭建博客教学
+subtitle: learn hexo
+date: 2019-04-18 22:12:46
+tags: 教程
+---</code></pre>
+<p>如此这般，即可解决此大坑。</p>
+<p>另外，为了方便以后的使用，可以在<code>/scaffolds/post.md</code>中，加入此变量。</p>
+<pre><code class="md">---
+title: {{ title }}
+subtitle:
+date: {{ date }}
+tags:
+---</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h4><ul>
+<li><p>进入<u><a href="https://music.163.com/" target="_blank" rel="noopener">网易云音乐</a></u>，选择你喜欢的歌，点击<code>生成外链播放器</code>，就可得到一个 html 的 iframe 标签</p>
+</li>
+<li><p>插进去</p>
+</li>
+</ul>
+<h4 id="代码高亮的-mac-panel-样式"><a href="#代码高亮的-mac-panel-样式" class="headerlink" title="代码高亮的 mac panel 样式"></a>代码高亮的 mac panel 样式</h4><blockquote>
+<p>这里不得不说下写博客的其中一条初衷，那就是让更多人从<code>百度</code>这种**搜索引擎的重复答案中，能找到几篇文章是不浑水摸鱼、CV 大师的。</p>
+</blockquote>
+<ul>
+<li><p>在搜寻更好看，简约的高亮主题中，我被这款迷住了双眼。果然，设计领域中只有 mac 设计和仿 mac 设计。话不多说，下面是这种风格效果的实现</p>
+</li>
+<li><p>首先，我们要知道 <code>mac panel</code> 这种效果并不是一种代码高亮的主题，其只是在代码区域外层做的一个样式包裹。所以，我们的主要问题和解决途径就是如何修改代码的外围区域</p>
+</li>
+<li><p>我们在博客的根目录下创建一个<code>scripts</code>文件夹，其中放置一些我们需要的全局脚本文件</p>
+</li>
+<li><p>新建<code>codeblock.js</code>文件，在其中我们使用 hexo 的 api<code>after_post_render</code>，用于在文章页渲染时做代码区域的处理</p>
+</li>
+<li><p>主要代码构成如下（这里无需引入什么模块，hexo 执行相关命令的时候会自动访问）</p>
+<pre><code class="javascript">const attributes = [
+  // 用于panel外层div的属性
+  &#39;autocomplete=&quot;off&quot;&#39;,
+  &#39;autocorrect=&quot;off&quot;&#39;,
+  &#39;autocapitalize=&quot;off&quot;&#39;,
+  &#39;spellcheck=&quot;false&quot;&#39;,
+  &#39;contenteditable=&quot;true&quot;&#39;
+];
+const attributesStr = attributes.join(&quot; &quot;);
+// 此方法可以获取所有文章的全部内容，具体可以打印 data
+hexo.extend.filter.register(&quot;after_post_render&quot;, data =&gt; {
+  // 这里是使用while持续获取匹配到的代码区域的dom标签
+  // 这里可能就有人问&#39;为什么别人的文章都是/&lt;figure ***&gt;/你的是/&lt;pre&gt;***/&#39;
+  // 你说为啥不一样，我们用的不是一个主题呗，这里的正则是根据你当前主题内文章渲染后代码区域的dom标签来定
+  // 查看dom都会吧
+  while (/&lt;pre&gt;(([\s\S])*?)&lt;\/pre&gt;/.test(data.content)) {
+    // 之后的操作就是将匹配到的标签，在其外层拼接一个div，然后返回所有文章
+    data.content = data.content.replace(/&lt;pre&gt;(([\s\S])*?)&lt;\/pre&gt;/, () =&gt; {
+      let lastMatch = RegExp.lastMatch;
+      let language =
+        RegExp.$1.match(/(?&lt;= )class=&quot;.*?&quot;/)[0].split(&quot;=&quot;)[1] || &quot;plain&quot;;
+      lastMatch = lastMatch.replace(/&lt;pre&gt;/, &#39;&lt;pre class=&quot;iseeu&quot;&gt;&#39;);
+      return `&lt;div class=&quot;highlight-wrap&quot;${attributesStr} data-rel=${language.toUpperCase()}&gt;${lastMatch}&lt;/div&gt;`;
+    });
+  }
+  return data;
+});</code></pre>
+</li>
+<li><p><code>highlight-wrap</code>的 css 样式，写在你的主题目录下的全局 css/less/scss/…文件中</p>
+<pre><code class="css"> /* mac panel */ 
+ .highlight-wrap[data-rel] { 
+   position: relative; 
+   overflow: hidden; 
+   border-radius: 5px; 
+   box-shadow: 0 10px 30px 0px rgba(0,0,0,0.4); 
+   margin: 35px 0; 
+  }
+  .highlight-wrap[data-rel] ::-webkit-scrollbar { 
+    height: 10px; 
+  } 
+  .highlight-wrap[data-rel] ::-webkit-scrollbar-track { 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px; 
+  } 
+  .highlight-wrap[data-rel] ::-webkit-scrollbar-thumb { 
+    border-radius: 10px; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  } 
+  .highlight-wrap[data-rel] ::before { 
+    color: white; 
+    content: attr(data-rel); 
+    height: 38px; 
+    line-height: 38px; 
+    background: #21252b; 
+    color: #fff; 
+    font-size: 16px; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    font-family: &#39;Source Sans Pro&#39;, sans-serif; 
+    font-weight: bold; 
+    padding: 0px 80px; 
+    text-indent: 15px; 
+    float: left; 
+  } 
+  .highlight-wrap[data-rel] ::after { 
+    content: &quot; &quot;; 
+    position: absolute; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%; 
+    background: #fc625d; 
+    width: 12px; 
+    height: 12px; 
+    top: 0; 
+    left: 20px; 
+    margin-top: 13px; 
+    -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b; 
+    box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b; 
+    z-index: 3; 
+  } 
+  .highlight-wrap[data-rel] pre { 
+    margin: 0; 
+    padding: 40px 0 10px; 
+  }</code></pre>
+</li>
+<li><p>全部配置完毕，运行<code>hexo s</code>，查看运行效果，基本上就已经完成了(css 细节自行调节)</p>
+</li>
+</ul>
+<h4 id="live2d-动画"><a href="#live2d-动画" class="headerlink" title="live2d 动画"></a>live2d 动画</h4><p>加入右下角可爱的动画人物</p>
+<ul>
+<li><p>安装步骤 <a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">看这里</a></p>
+</li>
+<li><p>各种<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">看板娘演示 demo</a></p>
+</li>
+</ul>
+<h4 id="不蒜子统计"><a href="#不蒜子统计" class="headerlink" title="不蒜子统计"></a>不蒜子统计</h4><p>使用不蒜子统计博客的 uv,pv.</p>
+<ul>
+<li><p>在主题下<code>/layout/_partial/footer.js</code>中引入不蒜子脚本<br><code>js &lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+<li><p>pv &amp;&amp; uv 的显示</p>
+<pre><code>    ```html
+    &lt;!-- 站点总访问量(总pv) --&gt;
+    &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;
+        总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;!-- 当前页面访问量(单页pv) --&gt;
+    &lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;
+当前页面访问量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;!-- 站点所有进入用户数(总uv) --&gt;
+    &lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;
+本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    ```</code></pre></li>
+</ul>
+
+      </div>
+
+      <div class="article-footer">
+        
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(https://i.loli.net/2020/04/05/yHEis5CFOdmDhBY.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/08/07/GFW/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              一分钟速成科学上网教学
+            
+          </p>
+        </article>
+      </div>
+    
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+  
+
+  
+  
+
+
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2022 <a href="/" target="_blank">elegantYU</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=d&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <!-- <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p> -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="hiddenBox" style="display: none;">
+      <span id="busuanzi_value_site_uv"></span>位道友拜访过
+      <span id="busuanzi_value_site_pv"></span>次流连忘返
+      <span id="busuanzi_value_page_pv"></span>次留名
+      <span id="busuanzi_container_site_uv"></span>
+      <span id="busuanzi_container_site_pv"></span>
+      <span id="busuanzi_container_page_pv"></span>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  
+  
+<!-- valine 评论 start -->
+<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: "#valine_thread",
+    appId: "5xXAw8mGSxsiAVvItnDTlc1Q-gzGzoHsz",
+    appKey: "izanFwv9WmbM99bQQKMDt6jj",
+    avatar: "elegantYu",
+    placeholder: "我卢本伟！没有开挂！",
+    notify: true,
+    visitor: true,
+    pageSize: 10,
+  });
+</script>
+<!-- valine 评论 end -->
+
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="/lib/APlayer.min.css">
+  <script src="/lib/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+<script src="/lib/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+<script src="/lib/waterfall.min.js"></script>
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  <script src="/lib/zoom.min.js"></script>
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  
+    ga('create', 'UA-165699409-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  
+
+
+
+<script src="/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+  
+  <!-- 尾部用户自定义相关内容 -->
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

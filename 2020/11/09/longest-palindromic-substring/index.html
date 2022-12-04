@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <meta name="description" content="elegantYu的快乐小屋~">
+  
+
+  
+    <meta name="keywords" content="技术,前端,学习,交流,javascript,nodejs,vue,插件,杂学,扯淡，教程，工具">
+  
+
+  
+    <meta name="author" content="elegantYU">
+  
+
+  
+
+  
+
+  <title>LeetCode-最长回文子串 | elegantYu</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css">
+<link rel="alternate" href="/atom.xml" title="elegantYu" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          elegantYu
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">home</a></li>
+        
+          <li class="navbar-list-item"><a href="/categories">categories</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">about</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<!-- header container -->
+<header class="header-container post">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-image" style="background-image: url(https://i.loli.net/2020/11/10/dbqljihTU6VuLQc.jpg)"></div>
+      <div class="post-text">
+        <div class="type-wrap">
+          
+        </div>
+        <h1 class="title-wrap">LeetCode-最长回文子串</h1>
+        <h2 class="title-sub-wrap">
+          <strong>elegantYU</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" target="_blank" rel="noopener" class="article-date">
+    <time datetime="2020-11-09T15:55:26.000Z" itemprop="datePublished">2020-11-09</time>
+  </a>
+
+        </h2>
+      </div>
+    </div>
+  
+
+  
+  
+
+  </header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <h1 id="最长回文子串-5"><a href="#最长回文子串-5" class="headerlink" title="最长回文子串 - 5"></a>最长回文子串 - 5</h1><p><a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">原题链接</a></p>
+<p>给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><pre><code class="code">输入: &quot;babad&quot;
+输出: &quot;bab&quot;
+注意: &quot;aba&quot; 也是一个有效答案。
+--------
+输入: &quot;cbbd&quot;
+输出: &quot;bb&quot;</code></pre>
+<h2 id="分析题意"><a href="#分析题意" class="headerlink" title="分析题意"></a>分析题意</h2><p>题目意思很好理解，回文：即正过来反过去都是同一个字符串。</p>
+<blockquote>
+<p>看到这里很多人一定想知道怎么获取最长回文子串，小编也想知道怎么获取最长回文子串，今天小编就带大家看一下什么是最长回文子串以及怎么获取最长回文子串。好了以上就是获取最长回文子串的方法，希望小编精心整理的这篇内容能够解决你的困惑。</p>
+</blockquote>
+<p>工作人员操作失误，竟被百家号小编抢走写了一段…好了，废话不多说，继续看题</p>
+<p>首先，我们知道了什么是回文后，就可以得到如何判断字符串是否是回文</p>
+<pre><code class="js">const s = &#39;abcba&#39;
+const r = s.split(&#39;&#39;).reverse().join(&#39;&#39;)
+
+if (s === r) return s</code></pre>
+<p>稍微枚举下所有可能的字符串，便知道，我们可以使用两个循环遍历出所有的选择</p>
+<pre><code class="bash">a
+ab
+abc
+abcb
+abcba 
+------
+b
+bc
+bcb
+bcba
+----
+....</code></pre>
+<p>再看下边界条件，长度为0 或 1 的字符串可以作为回文字符串返回，长度 2 以上需要做判断。</p>
+<p>综合以上条件，可以用暴力解法得到</p>
+<h3 id="暴力解题"><a href="#暴力解题" class="headerlink" title="暴力解题"></a>暴力解题</h3><pre><code class="js">const longestPalinDromeForce = s =&gt; {
+  const len = s.length
+  const cache = []  //  存放所有回文子串
+
+  if (len &lt; 2) return s
+
+  for (let i = 0; i &lt; len; i++) {
+    for (let j = 0; j &lt; len; j++) {
+      const curr = s.slice(i, j + 1)
+      const res = curr.split(&#39;&#39;).reverse().join(&#39;&#39;)
+      curr === res &amp;&amp; cache.push(curr)
+    }
+  }
+
+  // 所有子串长度递减排序 拿最长的
+  const max = cache.sort((a, b) =&gt; b.length - a.length)[0]
+
+  return max
+}
+
+longestPalinDromeForce(&#39;abbac&#39;)  //  输出： abba</code></pre>
+<p>wocao!太简单了吧，虽然很暴力，“又不是不能用”。</p>
+<p>我们在内部加上<code>console.time(&#39;暴力解法&#39;)</code> 和 <code>console.timeEnd(&#39;暴力解法&#39;)</code>看下运行用时，换上这个例子</p>
+<pre><code class="js">longestPalinDromeForce(&#39;jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx&#39;)
+
+// 输出  暴力解法: 1192.661ms</code></pre>
+<p>面试官集体失声，哭着对你说：咱优化下吧。</p>
+<h3 id="再次分析"><a href="#再次分析" class="headerlink" title="再次分析"></a>再次分析</h3><p>究竟是什么导致执行时间这么长呢，我们从头思考下，回文的特性</p>
+<ul>
+<li><strong>回文两端必相等</strong></li>
+<li><strong>一个回文首尾加上相同的字符，必是回文</strong></li>
+</ul>
+<p>例如：</p>
+<pre><code class="js">const str = &#39;ababc&#39;
+// a √
+// ab 两端不相等 ×
+// aba 两端相等，中间 b 是回文 √
+// abab 两端不等 ×
+// ...
+// b √
+// ba 两端不等 ×
+// bab 两端相等，中间 a 是回文 √
+// ...</code></pre>
+<p>由此，我们可以得到回文判断方程 </p>
+<p><code>是否是回文 = (s[i] === s[j] &amp;&amp; s[i + 1] === s[j - 1] &amp;&amp; s[i + 2] === s[j - 2]...)</code></p>
+<p>如上述回文特性第二条所说，两端相等且中间是回文的，必是回文，再次简化</p>
+<p><code>回文 = s[i] === s[j] &amp;&amp; 中间是回文</code></p>
+<p>判断公式有了，下一步就是获取 (i … j) 区间内字符是否是回文的判断了，这时候有人说了</p>
+<p>“我知道我知道，里面再加个递归嘛，这题我会”</p>
+<p>面试官悠长得吐了口烟：“回去等通知吧”</p>
+<p>……</p>
+<p>按照暴力解法里面的遍历顺序，我们没有办法去提前得知 <code>a...a</code> 中间是否是回文，但是 i++ 下次循环就可以得到下一层的首尾判断，所以我们逆向循环试试</p>
+<pre><code class="js">const s = &#39;abbav&#39;
+const len = s.length
+
+// 从尾部开始
+for (let i = len - 1; i &gt;= 0; i--) {
+  // 内部循环需从当前 i 位置，开始遍历保证截取字符串的顺序
+  for (let j = i; j &lt; len; j++) {
+    // 内部枚举如下
+    // 4 4 v
+    // 3 3 a
+    // 3 4 av
+    // 2 2 b
+    // 2 3 ba
+    // 2 4 bav
+    // 1 1 b
+    // 1 2 bb
+    // 1 3 bba
+    // 1 4 bbav
+    // 0 0 a
+    // 0 1 ab
+    // 0 2 abb
+    // 0 3 abba
+    // 0 4 abbav
+  }
+}</code></pre>
+<p>又因为 (i … j) 区间内部的回文，我们不需要知道具体内容，只需要一个判断的结果，在循环外加上一个二维数组存入i、j坐标，及其判断结果，下次循环直接利用存入的判断，减少重复判断</p>
+<p>至此，我们再写一下</p>
+<pre><code class="js">const len = s.length
+let cache = []  //  坐标数组
+
+for(let i = len - 1; i &gt;= 0; i--) {
+  cache[i] = [] //  初始化 i 位置
+  for (let j = i; j &lt; len; j++) {
+    if (j - i === 0) {  //  单个字符
+      cache[i][j] = true
+    } else if (j - i === 1 &amp;&amp; s[i] === s[j]) {  //  两个字符
+      cache[i][j] = true
+    } else if (s[i] === s[j] &amp;&amp; cache[i + 1][j - 1]) {  //  多个字符
+      cache[i][j] = true
+    }
+
+    if (cache[i][j]) {
+      console.log(&#39;这个区间的字符 就是回文字符&#39;)
+    }
+  }
+}</code></pre>
+<h3 id="最终整合版"><a href="#最终整合版" class="headerlink" title="最终整合版"></a>最终整合版</h3><pre><code class="js">const longestPalindrome = (s) =&gt; {
+    console.time(&quot;最终整合版&quot;);
+    const len = s.length;
+    if (len &lt; 2) return s;
+
+    let cache = [];
+    let max = &quot;&quot;;
+
+    for (let i = len - 1; i &gt;= 0; i--) {
+    cache[i] = []
+        for (let j = i; j &lt; len; j++) {
+            if (j - i === 0) {
+                cache[i][j] = true;
+            } else if (j - i === 1 &amp;&amp; s[i] === s[j]) {
+                cache[i][j] = true;
+            } else if (s[i] === s[j] &amp;&amp; cache[i+1][j-1]) {
+                cache[i][j] = true;
+            }
+
+      // 判断长度 替换max
+            if (cache[i][j] &amp;&amp; j - i + 1 &gt; max.length) {
+                max = s.slice(i, j + 1);
+            }
+        }
+    }
+
+    console.timeEnd(&quot;最终整合版&quot;);
+    return max;
+};
+
+longestPalindrome(&quot;jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx&quot;)
+
+//  输出 最终整合版: 19.145ms！！！！</code></pre>
+<p>面试官：“我们来谈谈薪资吧”</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>对于这种内部子循环可以复用，且有一个<code>条件|状态</code>判断方程的，我们都可以使用这种解法思想去实现，此之谓“动态规划”。</p>
+<ul>
+<li>确定题目结果的特性</li>
+<li>根据推导过程抽象得到一个判断方程(正推，逆推都需要，获得最优解)</li>
+<li>思考如何省略可复用结果</li>
+<li>获取初始值 和 边界情况的判断</li>
+<li>结果输出的判断</li>
+</ul>
+<p>当然，条条大路通罗马，解法是没有定数的，一定还有更优的解法，但毕竟本人也不是专门肝算法的，能够用一个不错的算法思想去解决问题，Enough~</p>
+
+      </div>
+
+      <div class="article-footer">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">#leetcode</a></li></ul>
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(https://i.loli.net/2020/12/31/XzStjfqlsrp8NQD.png)"></div>
+          
+          <a class="card-link article-nav-link" href="/2020/12/31/CyberPunk2077/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              CyberPunk2077
+            
+          </p>
+        </article>
+      </div>
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(https://i.loli.net/2020/11/04/SIXhpZtHs1jEeBQ.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2020/11/04/add-two-numbers/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              LeetCode-两数相加
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+  
+
+  
+  
+
+
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2022 <a href="/" target="_blank">elegantYU</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=d&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <!-- <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p> -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="hiddenBox" style="display: none;">
+      <span id="busuanzi_value_site_uv"></span>位道友拜访过
+      <span id="busuanzi_value_site_pv"></span>次流连忘返
+      <span id="busuanzi_value_page_pv"></span>次留名
+      <span id="busuanzi_container_site_uv"></span>
+      <span id="busuanzi_container_site_pv"></span>
+      <span id="busuanzi_container_page_pv"></span>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  
+  
+<!-- valine 评论 start -->
+<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: "#valine_thread",
+    appId: "5xXAw8mGSxsiAVvItnDTlc1Q-gzGzoHsz",
+    appKey: "izanFwv9WmbM99bQQKMDt6jj",
+    avatar: "elegantYu",
+    placeholder: "我卢本伟！没有开挂！",
+    notify: true,
+    visitor: true,
+    pageSize: 10,
+  });
+</script>
+<!-- valine 评论 end -->
+
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="/lib/APlayer.min.css">
+  <script src="/lib/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+<script src="/lib/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+<script src="/lib/waterfall.min.js"></script>
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  <script src="/lib/zoom.min.js"></script>
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  
+    ga('create', 'UA-165699409-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  
+
+
+
+<script src="/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+  
+  <!-- 尾部用户自定义相关内容 -->
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

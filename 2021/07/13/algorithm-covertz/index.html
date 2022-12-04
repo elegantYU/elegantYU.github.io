@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <meta name="description" content="elegantYu的快乐小屋~">
+  
+
+  
+    <meta name="keywords" content="技术,前端,学习,交流,javascript,nodejs,vue,插件,杂学,扯淡，教程，工具">
+  
+
+  
+    <meta name="author" content="elegantYU">
+  
+
+  
+
+  
+
+  <title>算法-z字形变换 | elegantYu</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css">
+<link rel="alternate" href="/atom.xml" title="elegantYu" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          elegantYu
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">home</a></li>
+        
+          <li class="navbar-list-item"><a href="/categories">categories</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">about</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<!-- header container -->
+<header class="header-container post">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-image" style="background-image: url(https://i.loli.net/2020/06/14/2Ndt1jLzMiE3Bxy.jpg)"></div>
+      <div class="post-text">
+        <div class="type-wrap">
+          
+        </div>
+        <h1 class="title-wrap">算法-z字形变换</h1>
+        <h2 class="title-sub-wrap">
+          <strong>elegantYU</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" target="_blank" rel="noopener" class="article-date">
+    <time datetime="2021-07-13T15:15:08.000Z" itemprop="datePublished">2021-07-13</time>
+  </a>
+
+        </h2>
+      </div>
+    </div>
+  
+
+  
+  
+
+  </header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <p>肝算法第一天</p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行  Z 字形排列。</p>
+<p>比如输入字符串为 “PAYPALISHIRING”  行数为 3 时，排列如下：</p>
+<pre><code class="js">P   A   H   N
+A P L S I I G
+Y   I   R</code></pre>
+<p>之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”PAHNAPLSIIGYIR”。</p>
+<p>请你实现这个将字符串进行指定行数变换的函数：</p>
+<pre><code class="js">convert(s, numRows);</code></pre>
+<p>示例：</p>
+<pre><code class="js">输入：s = &quot;PAYPALISHIRING&quot;, numRows = 3
+输出：&quot;PAHNAPLSIIGYIR&quot;</code></pre>
+<p><a href="https://leetcode-cn.com/problems/zigzag-conversion/" target="_blank" rel="noopener">原题传送门</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="按照-z-形顺序查找"><a href="#按照-z-形顺序查找" class="headerlink" title="按照 z 形顺序查找"></a>按照 z 形顺序查找</h3><p>z 形图的行数 row 已知，我们可以创建 row 个数组来存放查到的元素 <code>[[], [], []]</code></p>
+<p>然后该怎么查询元素呢</p>
+<p>根据例子我们可以看到，如果按照 左上 -&gt; 左下 -&gt; 下列上 -&gt; 下列下 的顺序去读的话，和源字符串是一样的。</p>
+<pre><code class="js">P   A   H   N
+A P L S I I G
+Y   I   R</code></pre>
+<p>又可以看到，这里每 4 个数是一个周期，之后的形态和顺序也都是一致的。</p>
+<p>还是不好总结规律？那么再多看一个不同行数的例子 (4 行)</p>
+<pre><code class="js">H     O
+E   W R
+L O   L !
+L     D</code></pre>
+<p>这里的小周期是 6 个数</p>
+<pre><code class="js">row = 3;
+cycle = 4;
+
+row = 4;
+cycle = 6;</code></pre>
+<p>可以得到规律 <code>cycle = row + row - 2</code>, 即 <code>cycle = 2 * row - 2</code></p>
+<hr>
+<p>看到这里应该有个模糊的思路，这个解法和周期有关，但是循环 左上 -&gt; 左下 之后该怎么处理，才能把后面 <strong>数的索引</strong> 与 <strong>对应行数</strong> 关联呢</p>
+<p>这里就有两种解法</p>
+<ol>
+<li>取余</li>
+</ol>
+<p>可以将循环 s 字符串的索引 i，与 cycle 周期取余 <code>remiander = i % cycle</code>，这个余数就是每个小周期内元素的位置</p>
+<p>remainder(余数) 若小于 row， 则 s[i] 可以插入 res[i] 中；</p>
+<p>大于或等于的条件，正是处于 左下 -&gt; 下列上 的路线里，而 <code>cycle - remainder</code> 就等于其对应的 res 的索引</p>
+<p>代码如下</p>
+<pre><code class="js">function convert(s, row) {
+    // 所有行数组
+    const res = Array.from(Array(row), () =&gt; Array(s.length));
+    const cycle = 2 * row - 2;
+
+    for (let i = 0, len = s.length; i &lt; len; i++) {
+        const remainder = i % cycle;
+
+        if (remainder &lt; cycle) {
+            res[remainder].push(s[i]);
+        } else {
+            res[cycle - remainder].push(s[i]);
+        }
+    }
+
+    return res.reduce((str, arr) =&gt; `${str}${arr.join(&quot;&quot;)}`, &quot;&quot;);
+}</code></pre>
+<ol start="2">
+<li>flag 定义拐点</li>
+</ol>
+<p>这个解法也是很奇妙，逻辑死板的我是没想到，利用 flag 定义查找的方向和差值</p>
+<p>主要是拐点判断的方式不同换汤不换药</p>
+<pre><code class="js">function convert(s, row) {
+    const res = Array.from(Array(row), () =&gt; Array(s.length));
+    const cycle = 2 * row - 2;
+
+    let flag = -1;
+    let rowIdx = 0;
+
+    for (let i = 0, len = s.length; i &lt; len; i++) {
+        res[rowIdx].push(s[i]);
+
+        // 周期结束后 flag 取反， 左上 -&gt; 左下 flag 为 1； 左下 -&gt; 下列上 flag 为 -1
+        if (rowIdx === 0 || rowIdx === row - 1) {
+            flag = -flag;
+        }
+
+        // rowIdx 在左下 -&gt; 下列上的路线中，会再变为 0
+        rowIdx = rowIdx + flag;
+    }
+
+    return res.reduce((str, arr) =&gt; `${str}${arr.join(&quot;&quot;)}`, &quot;&quot;);
+}</code></pre>
+<h3 id="按照结果顺序，逐行查找"><a href="#按照结果顺序，逐行查找" class="headerlink" title="按照结果顺序，逐行查找"></a>按照结果顺序，逐行查找</h3><p>这种解法是我刚开始的思路，<strong>获取每行的每列间的规律</strong>, 但是脑子里只有一个大概的想法，不能精简提炼出来。</p>
+<pre><code class="js">这              服
+个          的  所
+解      真      以
+法  是          要  到
+我              嫖</code></pre>
+<p>第一行和最后一行，每个元素间 index 的差值为 2 * row - 2</p>
+<p>第 i 行，index 分别是</p>
+<pre><code>1 7 9
+2 6 10
+3 5 11 13</code></pre><p>间距差值为</p>
+<pre><code>6 2
+4 4
+2 6 2</code></pre><p>这与每行索引 i(1 | 2 | 3) 、 周期 cycle(8) 的联系是什么呢</p>
+<pre><code>cycle - 2 * i   2 * i
+cycle - 2 * i   2 * i
+cycle - 2 * i   2 * i   cycle - 2 * i</code></pre><p>综上可以的规律：</p>
+<ul>
+<li>第一行与最后一行间距固定，为 2 * row - 2</li>
+<li>第 i 行间距是两个值交替，2 _ row - 2 - 2 _ i || 2 * i</li>
+<li>每行元素下标，不会超过 s 长度</li>
+</ul>
+<pre><code class="js">function convert(s, row) {
+    const cycle = 2 * row - 2; //  周期
+    let nextIdx = 0; //  每行下个元素的下标
+    let offset = 0; //  交替变化的元素间距
+    let res = &quot;&quot;;
+
+    for (let i = 0; i &lt; row; i++) {
+        // 下一行的起始 i
+        nextIdx = i;
+        offset = 2 * i;
+
+        while (nextIdx &lt; s.length) {
+            res += s[nextIdx];
+            // 这是最精巧的一步，offset会交替变为 2 * i 或 cycle - 2 * i
+            offset = cycle - offset;
+            // 当前行是第一行或最后一行
+            nextIdx += i === 0 || i === row - 1 ? step : offset;
+        }
+    }
+
+    return res;
+}</code></pre>
+<p>最后一种解法很高效，无论空间和时间都远超上面解法，不过找规律这块真的把我搞住了，之后直接选择了第一种解法。</p>
+<blockquote>
+<p>希望面试别遇到</p>
+</blockquote>
+
+      </div>
+
+      <div class="article-footer">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">#算法</a></li></ul>
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item">
+        <article>
+          
+          <a class="card-link article-nav-link" href="/2021/07/14/algorithm-reomveNodeFromEnd/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              算法-删除链表倒数第n个节点
+            
+          </p>
+        </article>
+      </div>
+    
+    
+      <div id="article-nav-older" class="card-item">
+        <article>
+          
+          <a class="card-link article-nav-link" href="/2021/07/12/algorithm-sumthreenum/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              算法-三数之和
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+  
+
+  
+  
+
+
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2022 <a href="/" target="_blank">elegantYU</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=d&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <!-- <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p> -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="hiddenBox" style="display: none;">
+      <span id="busuanzi_value_site_uv"></span>位道友拜访过
+      <span id="busuanzi_value_site_pv"></span>次流连忘返
+      <span id="busuanzi_value_page_pv"></span>次留名
+      <span id="busuanzi_container_site_uv"></span>
+      <span id="busuanzi_container_site_pv"></span>
+      <span id="busuanzi_container_page_pv"></span>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  
+  
+<!-- valine 评论 start -->
+<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: "#valine_thread",
+    appId: "5xXAw8mGSxsiAVvItnDTlc1Q-gzGzoHsz",
+    appKey: "izanFwv9WmbM99bQQKMDt6jj",
+    avatar: "elegantYu",
+    placeholder: "我卢本伟！没有开挂！",
+    notify: true,
+    visitor: true,
+    pageSize: 10,
+  });
+</script>
+<!-- valine 评论 end -->
+
+
+
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="/lib/APlayer.min.css">
+  <script src="/lib/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+<script src="/lib/DPlayer.min.js"></script>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+<script src="/lib/waterfall.min.js"></script>
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  <script src="/lib/zoom.min.js"></script>
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  
+    ga('create', 'UA-165699409-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  
+
+
+
+<script src="/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+  
+  <!-- 尾部用户自定义相关内容 -->
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
